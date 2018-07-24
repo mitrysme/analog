@@ -1,0 +1,797 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{C7E29124-0C06-4D8B-A3C0-6A32D7DB6B08}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>Sub Main</StartupObject>
+    <RootNamespace>
+    </RootNamespace>
+    <AssemblyName>Analog</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>WindowsFormsWithCustomSubMain</MyType>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <OptionExplicit>On</OptionExplicit>
+    <OptionCompare>Binary</OptionCompare>
+    <OptionStrict>Off</OptionStrict>
+    <OptionInfer>On</OptionInfer>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <TargetFrameworkProfile />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>Analog.xml</DocumentationFile>
+    <NoWarn>42353,42354,42355</NoWarn>
+    <WarningsAsErrors>41998,42004,42020,42021,42022,42024,42025,42026,42029,42030,42031,42099,42104,42105,42106,42107,42108,42109</WarningsAsErrors>
+    <WarningLevel>1</WarningLevel>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>Analog.xml</DocumentationFile>
+    <NoWarn>42353,42354,42355</NoWarn>
+    <WarningsAsErrors>41998,42004,42020,42021,42022,42024,42025,42026,42029,42030,42031,42099,42104,42105,42106,42107,42108,42109</WarningsAsErrors>
+    <WarningLevel>1</WarningLevel>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CollapsiblePanelBar">
+      <HintPath>librairies\CollapsiblePanelBar.dll</HintPath>
+    </Reference>
+    <Reference Include="DataGridViewPercentageColumn">
+      <HintPath>librairies\DataGridViewPercentageColumn.dll</HintPath>
+    </Reference>
+    <Reference Include="MDIWindowManager">
+      <HintPath>librairies\MDIWindowManager.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>librairies\Microsoft.Office.Interop.Excel.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data, Version=6.4.4.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>librairies\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="SnmpSharpNet, Version=0.9.4.0, Culture=neutral, PublicKeyToken=b2181aa3b9571feb, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>libraries\SnmpSharpNet.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="System.Xml.Serialization" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AnalogFunctions.vb" />
+    <None Include="classes\cAsyncPinger.vb.old" />
+    <Compile Include="classes\cAsyncPinger.vb" />
+    <Compile Include="classes\cbatchScan.vb" />
+    <Compile Include="classes\cBatchScanReport.vb" />
+    <Compile Include="classes\cCommentaire.vb" />
+    <Compile Include="classes\cCommentaireDisplayList.vb" />
+    <Compile Include="classes\cleanStationWin7.vb" />
+    <Compile Include="classes\cMonitorInfo.vb" />
+    <Compile Include="classes\cPinger.vb" />
+    <Compile Include="classes\cPrinterList.vb" />
+    <Compile Include="classes\cPrinterScanner.vb" />
+    <Compile Include="classes\cPrograms.vb" />
+    <Compile Include="classes\cUtests.vb" />
+    <Compile Include="classes\LDAP\ldapUser.vb" />
+    <Compile Include="classes\psExec.vb" />
+    <Compile Include="classes\snmpGet.vb" />
+    <Compile Include="classes\SQL\cMysqlPrinterTable.vb" />
+    <Compile Include="classes\SQL\cMysqlConnection.vb" />
+    <Compile Include="classes\SQL\cMysqlDisplays.vb" />
+    <Compile Include="classes\SQL\cMysqlStation.vb" />
+    <Compile Include="classes\SQL\cMySqlStationInfosTable.vb" />
+    <Compile Include="classes\SQL\cMysqlStationProgramsTable.vb" />
+    <Compile Include="classes\SQL\cMySqlStationTable.vb" />
+    <Compile Include="classes\SQL\cMySqlstationLogsTable.vb" />
+    <Compile Include="classes\wmi\controllers\cGpo_Old.vb" />
+    <Compile Include="classes\wmi\controllers\cGpo.vb" />
+    <Compile Include="classes\wmi\controllers\NtApplicationEvent.vb" />
+    <Compile Include="classes\wmi\controllers\NtBaseLogEvent.vb" />
+    <Compile Include="classes\wmi\controllers\ntEventLogFile.vb" />
+    <Compile Include="classes\wmi\controllers\win32_batteryController.vb" />
+    <Compile Include="classes\wmi\modeles\win32_battery.vb" />
+    <Compile Include="controles\DBTableLayoutPanel.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="classes\LDAP\ldapWrapper.vb" />
+    <Compile Include="classes\log\clog.vb" />
+    <Compile Include="classes\log\cLogEntry.vb" />
+    <Compile Include="classes\cProcessConnection.vb" />
+    <Compile Include="classes\nativeFunctions.vb" />
+    <Compile Include="classes\cProducerConsumerQueue.vb" />
+    <Compile Include="classes\perfCounterHelper.vb" />
+    <Compile Include="controles\gradientFlowLayoutPanel.Designer.vb">
+      <DependentUpon>gradientFlowLayoutPanel.vb</DependentUpon>
+    </Compile>
+    <Compile Include="controles\gradientFlowLayoutPanel.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="controles\richTextBoxLinesCountWrapped.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="classes\SQL\cMysqlcommentaires.vb" />
+    <Compile Include="classes\wmi\controllers\DiskDrive.vb" />
+    <Compile Include="classes\wmi\controllers\Environment.vb" />
+    <Compile Include="classes\wmi\controllers\LogicalDisk.vb" />
+    <Compile Include="classes\wmi\controllers\Service.vb" />
+    <Compile Include="classes\wmi\controllers\VideoController.vb" />
+    <Compile Include="classes\wmi\modeles\Win32_DiskDrive.vb" />
+    <Compile Include="classes\wmi\modeles\Win32_Environment.vb" />
+    <Compile Include="classes\wmi\modeles\Win32_LogicalDisk.vb" />
+    <Compile Include="classes\wmi\modeles\Win32_NTLogEvent.vb" />
+    <Compile Include="classes\wmi\controllers\NtLogEvent.vb" />
+    <Compile Include="classes\wmi\modeles\Win32_Service.vb" />
+    <Compile Include="classes\wmi\controllers\Win32_VideoController.vb" />
+    <Compile Include="classes\wmi\wmiSmart.vb" />
+    <Compile Include="classes\Xml\xmlParser.vb" />
+    <Compile Include="classes\Xml\xmlWriter.vb" />
+    <Compile Include="controles\baseLv.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="classes\ApplicationEvents.vb" />
+    <Compile Include="classes\cexcel.vb" />
+    <Compile Include="classes\cFavoris.vb" />
+    <Compile Include="classes\cgInfosStation.vb" />
+    <Compile Include="classes\enums.vb" />
+    <Compile Include="classes\program.vb" />
+    <Compile Include="classes\CleanStation.vb" />
+    <Compile Include="classes\network.vb" />
+    <Compile Include="classes\preferences.vb" />
+    <Compile Include="classes\structs.vb" />
+    <Compile Include="classes\wmi\cwmi.vb" />
+    <Compile Include="classes\cLvColSorter.vb" />
+    <Compile Include="controles\gradiendPanel.Designer.vb">
+      <DependentUpon>gradiendPanel.vb</DependentUpon>
+    </Compile>
+    <Compile Include="controles\gradiendPanel.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="controles\graphs\cpuGraph.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="controles\graphs\baseGraphControl.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="controles\graphs\diskIOGraph.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="controles\graphs\freeMemoryGraph.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="controles\graphs\networkIOgraph.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="controles\lvPrograms.Designer.vb">
+      <DependentUpon>lvPrograms.vb</DependentUpon>
+    </Compile>
+    <Compile Include="controles\lvPrograms.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="classes\cProcessInfos.vb" />
+    <Compile Include="controles\lvServices.Designer.vb">
+      <DependentUpon>lvServices.vb</DependentUpon>
+    </Compile>
+    <Compile Include="controles\lvServices.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="controles\tbErrorRedGreen.designer.vb">
+      <DependentUpon>tbErrorRedGreen.vb</DependentUpon>
+    </Compile>
+    <Compile Include="controles\tbErrorRedGreen.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="enums.vb" />
+    <Compile Include="forms\frmLDAPComputerInfos.Designer.vb">
+      <DependentUpon>frmLDAPComputerInfos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="forms\frmLDAPComputerInfos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\frmPrinterList.Designer.vb">
+      <DependentUpon>frmPrinterList.vb</DependentUpon>
+    </Compile>
+    <Compile Include="forms\frmPrinterList.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\frmBrowser.Designer.vb">
+      <DependentUpon>frmBrowser.vb</DependentUpon>
+    </Compile>
+    <Compile Include="forms\frmBrowser.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\frmClearLogs.Designer.vb">
+      <DependentUpon>frmClearLogs.vb</DependentUpon>
+    </Compile>
+    <Compile Include="forms\frmClearLogs.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\frmDatagridScan.Designer.vb">
+      <DependentUpon>frmDatagridScan.vb</DependentUpon>
+    </Compile>
+    <Compile Include="forms\frmDatagridScan.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\frmDetailPing.designer.vb">
+      <DependentUpon>frmDetailPing.vb</DependentUpon>
+    </Compile>
+    <Compile Include="forms\frmDetailPing.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\frmEnvVar.Designer.vb">
+      <DependentUpon>frmEnvVar.vb</DependentUpon>
+    </Compile>
+    <Compile Include="forms\frmEnvVar.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\frmInfoLDAPUser.Designer.vb">
+      <DependentUpon>frmInfoLDAPUser.vb</DependentUpon>
+    </Compile>
+    <Compile Include="forms\frmInfoLDAPUser.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\frmMdiContainer.Designer.vb">
+      <DependentUpon>frmMdiContainer.vb</DependentUpon>
+    </Compile>
+    <Compile Include="forms\frmMdiContainer.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\frmNetworkInterfacesDetails.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\frmDisplayDetails.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\frmBaseDynDetails.Designer.vb">
+      <DependentUpon>frmBaseDynDetails.vb</DependentUpon>
+    </Compile>
+    <Compile Include="forms\frmBaseDynDetails.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\frmExportDialog.Designer.vb">
+      <DependentUpon>frmExportDialog.vb</DependentUpon>
+    </Compile>
+    <Compile Include="forms\frmExportDialog.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\frmAjouterFavoris.Designer.vb">
+      <DependentUpon>frmAjouterFavoris.vb</DependentUpon>
+    </Compile>
+    <Compile Include="forms\frmAjouterFavoris.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\frmDetailsErr.Designer.vb">
+      <DependentUpon>frmDetailsErr.vb</DependentUpon>
+    </Compile>
+    <Compile Include="forms\frmDetailsErr.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\frmHddInfos.Designer.vb">
+      <DependentUpon>frmHddInfos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="forms\frmHddInfos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="classes\functions.vb" />
+    <Compile Include="forms\frmOrganiserFavoris.Designer.vb">
+      <DependentUpon>frmOrganiserFavoris.vb</DependentUpon>
+    </Compile>
+    <Compile Include="forms\frmOrganiserFavoris.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\frmPreferences.Designer.vb">
+      <DependentUpon>frmPreferences.vb</DependentUpon>
+    </Compile>
+    <Compile Include="forms\frmPreferences.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\frmMain.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\frmPrinterScan.Designer.vb">
+      <DependentUpon>frmPrinterScan.vb</DependentUpon>
+    </Compile>
+    <Compile Include="forms\frmPrinterScan.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\frmRsop.Designer.vb">
+      <DependentUpon>frmRsop.vb</DependentUpon>
+    </Compile>
+    <Compile Include="forms\frmRsop.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\frmShowBatchResult.designer.vb">
+      <DependentUpon>frmShowBatchResult.vb</DependentUpon>
+    </Compile>
+    <Compile Include="forms\frmShowBatchResult.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\frmSmart.Designer.vb">
+      <DependentUpon>frmSmart.vb</DependentUpon>
+    </Compile>
+    <Compile Include="forms\frmSmart.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\frmTestMDI.Designer.vb">
+      <DependentUpon>frmTestMDI.vb</DependentUpon>
+    </Compile>
+    <Compile Include="forms\frmTestMDI.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\Server\frmServer.Designer.vb">
+      <DependentUpon>frmServer.vb</DependentUpon>
+    </Compile>
+    <Compile Include="forms\Server\frmServer.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\frmMain.Designer.vb">
+      <DependentUpon>frmMain.vb</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\frmAPropos.Designer.vb">
+      <DependentUpon>frmAPropos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="forms\frmAPropos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\frmError.designer.vb">
+      <DependentUpon>frmError.vb</DependentUpon>
+    </Compile>
+    <Compile Include="forms\frmError.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\frmLicense.Designer.vb">
+      <DependentUpon>frmLicense.vb</DependentUpon>
+    </Compile>
+    <Compile Include="forms\frmLicense.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\Server\frmServerPreferences.Designer.vb">
+      <DependentUpon>frmServerPreferences.vb</DependentUpon>
+    </Compile>
+    <Compile Include="forms\Server\frmServerPreferences.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="controles\lvInfoDisk.Designer.vb">
+      <DependentUpon>lvInfoDisk.vb</DependentUpon>
+    </Compile>
+    <Compile Include="controles\lvInfoDisk.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="controles\lvProcess.Designer.vb">
+      <DependentUpon>lvProcess.vb</DependentUpon>
+    </Compile>
+    <Compile Include="controles\lvProcess.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="controles\lvDetailsErr.Designer.vb">
+      <DependentUpon>lvDetailsErr.vb</DependentUpon>
+    </Compile>
+    <Compile Include="controles\lvDetailsErr.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="controles\lvBatch.Designer.vb">
+      <DependentUpon>lvBatch.vb</DependentUpon>
+    </Compile>
+    <Compile Include="controles\lvBatch.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="forms\cleanForm.Designer.vb">
+      <DependentUpon>cleanForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="forms\cleanForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="classes\station.vb" />
+    <Compile Include="classes\transparencyClass.vb" />
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="classes\Process.vb" />
+    <Compile Include="classes\cregistry.vb" />
+    <Compile Include="Resources\Resource1.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resource1.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Settings.vb" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="controles\lvPrograms.resx">
+      <DependentUpon>lvPrograms.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="controles\lvServices.resx">
+      <DependentUpon>lvServices.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\frmEnvVar.resx">
+      <DependentUpon>frmEnvVar.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\frmExportDialog.resx">
+      <DependentUpon>frmExportDialog.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\frmAjouterFavoris.resx">
+      <DependentUpon>frmAjouterFavoris.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\frmMain.resx">
+      <DependentUpon>frmMain.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\frmDetailsErr.resx">
+      <DependentUpon>frmDetailsErr.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\frmHddInfos.resx">
+      <DependentUpon>frmHddInfos.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\frmOrganiserFavoris.resx">
+      <DependentUpon>frmOrganiserFavoris.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\frmPreferences.resx">
+      <DependentUpon>frmPreferences.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\frmPrinterList.resx">
+      <DependentUpon>frmPrinterList.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\frmPrinterScan.resx">
+      <DependentUpon>frmPrinterScan.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\frmSmart.resx">
+      <DependentUpon>frmSmart.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\Server\frmServer.resx">
+      <DependentUpon>frmServer.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\frmAPropos.resx">
+      <DependentUpon>frmAPropos.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\frmError.resx">
+      <DependentUpon>frmError.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\frmLicense.resx">
+      <DependentUpon>frmLicense.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\Server\frmServerPreferences.resx">
+      <DependentUpon>frmServerPreferences.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="controles\lvInfoDisk.resx">
+      <DependentUpon>lvInfoDisk.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="controles\lvProcess.resx">
+      <DependentUpon>lvProcess.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="controles\lvDetailsErr.resx">
+      <DependentUpon>lvDetailsErr.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="controles\lvBatch.resx">
+      <DependentUpon>lvBatch.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\cleanForm.resx">
+      <DependentUpon>cleanForm.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="My Project\app.manifest" />
+    <None Include="My Project\Settings.settings">
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\096.png" />
+    <None Include="Resources\48px-Folder_svg.png" />
+    <None Include="Resources\add.gif" />
+    <None Include="Resources\application_blue.png" />
+    <None Include="Resources\arrow_000_medium.png" />
+    <None Include="Resources\arrow_180_medium.png" />
+    <None Include="Resources\clean.jpg" />
+    <None Include="Resources\clipboard_edit.png" />
+    <None Include="Resources\close.gif" />
+    <None Include="Resources\compmgmt.bmp" />
+    <None Include="Resources\Console-mdk.png" />
+    <None Include="Resources\control.png" />
+    <None Include="Resources\control_pause.png" />
+    <None Include="Resources\control_stop_square.png" />
+    <None Include="Resources\copy16.gif" />
+    <None Include="Resources\cross.png" />
+    <None Include="Resources\cross_circle.png" />
+    <None Include="Resources\delete2.gif" />
+    <None Include="Resources\display.gif" />
+    <None Include="Resources\display16.gif" />
+    <None Include="Resources\dll.gif" />
+    <None Include="Resources\dll.png" />
+    <None Include="Resources\document_text.png" />
+    <None Include="Resources\document_text_image.png" />
+    <None Include="Resources\down.gif" />
+    <None Include="Resources\download.gif" />
+    <None Include="Resources\EnvVar.gif" />
+    <None Include="Resources\eventId.png" />
+    <None Include="Resources\exe.gif" />
+    <None Include="Resources\exe32.png" />
+    <None Include="Resources\file_info.gif" />
+    <None Include="Resources\filterGif.gif" />
+    <None Include="Resources\folder_info.png" />
+    <None Include="Resources\folder_open.png" />
+    <None Include="Resources\folder_open_document.png" />
+    <None Include="Resources\gear.png" />
+    <None Include="Resources\globe.png" />
+    <None Include="Resources\handle.gif" />
+    <None Include="Resources\harddisk.jpg" />
+    <None Include="Resources\hddIcon.jpg" />
+    <None Include="Resources\help16.png" />
+    <None Include="Resources\hideDetails.gif" />
+    <None Include="Resources\icon2.gif" />
+    <None Include="Resources\icone-ecran.jpg" />
+    <None Include="Resources\icone-excel.jpg" />
+    <None Include="Resources\ie7.gif" />
+    <None Include="Resources\ie7_16.gif" />
+    <None Include="Resources\info.gif" />
+    <None Include="Resources\information_frame.png" />
+    <None Include="Resources\key.png" />
+    <None Include="Resources\kill.gif" />
+    <None Include="Resources\locked.gif" />
+    <None Include="Resources\magnifier.png" />
+    <None Include="Resources\magnify.gif" />
+    <None Include="Resources\monitoring2.gif" />
+    <None Include="Resources\network32.png" />
+    <None Include="Resources\network49.png" />
+    <None Include="Resources\ok.gif" />
+    <None Include="Resources\OK_32.png" />
+    <None Include="Resources\open.gif" />
+    <None Include="Resources\operating_system.jpg" />
+    <None Include="Resources\options.gif" />
+    <None Include="Resources\options16.gif" />
+    <None Include="Resources\p0.gif" />
+    <None Include="Resources\p1.gif" />
+    <None Include="Resources\p2.gif" />
+    <None Include="Resources\p3.gif" />
+    <None Include="Resources\p4.gif" />
+    <None Include="Resources\p5.gif" />
+    <None Include="Resources\p6.gif" />
+    <None Include="Resources\page_info.gif" />
+    <None Include="Resources\pause32.png" />
+    <None Include="Resources\paypal.gif" />
+    <None Include="Resources\play32.png" />
+    <None Include="Resources\plus_circle.png" />
+    <None Include="Resources\process.gif" />
+    <None Include="Resources\process.jpg" />
+    <None Include="Resources\process1.png" />
+    <None Include="Resources\refresh.gif" />
+    <None Include="Resources\refresh16.gif" />
+    <None Include="Resources\right.gif" />
+    <None Include="Resources\save.gif" />
+    <None Include="Resources\scripting16.png" />
+    <None Include="Resources\sf3.gif" />
+    <None Include="Resources\shield.png" />
+    <None Include="Resources\shield_32.png" />
+    <None Include="Resources\speef.gif" />
+    <None Include="Resources\start2.gif" />
+    <None Include="Resources\stop32.png" />
+    <None Include="Resources\target16.gif" />
+    <None Include="Resources\target3.gif" />
+    <None Include="Resources\thread.gif" />
+    <None Include="Resources\trash.gif" />
+    <None Include="Resources\unlock.gif" />
+    <None Include="Resources\up.gif" />
+    <None Include="Resources\warning1.png" />
+    <None Include="Resources\warning16.png" />
+    <None Include="Resources\wdbg.bmp" />
+    <None Include="Resources\window_add.png" />
+    <None Include="Resources\yapm32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="libraries\SnmpSharpNet.dll" />
+    <Content Include="Resources\arrow_undo.png" />
+    <EmbeddedResource Include="forms\frmClearLogs.resx">
+      <DependentUpon>frmClearLogs.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\frmDatagridScan.resx">
+      <DependentUpon>frmDatagridScan.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\frmDetailPing.resx">
+      <DependentUpon>frmDetailPing.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\frmInfoLDAPUser.resx">
+      <DependentUpon>frmInfoLDAPUser.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\frmMdiContainer.resx">
+      <DependentUpon>frmMdiContainer.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\frmRsop.resx">
+      <DependentUpon>frmRsop.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\frmShowBatchResult.resx">
+      <DependentUpon>frmShowBatchResult.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\frmTestMDI.resx">
+      <DependentUpon>frmTestMDI.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\delete.png" />
+    <EmbeddedResource Include="Resources\Resource1.resx">
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resource1.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <None Include="ClassDiagram2.cd" />
+    <None Include="Resources\delete1.png" />
+    <None Include="Resources\arrow_undo1.png" />
+    <None Include="Resources\dateIcon.png" />
+    <None Include="Resources\processAnimate.gif" />
+    <None Include="Resources\processAnimate1.gif" />
+    <None Include="Resources\processAnimate2.gif" />
+    <None Include="Resources\logo_chu.jpg" />
+    <None Include="Resources\logo_microsoft.jpg" />
+    <None Include="Resources\hors_sujet.jpg" />
+    <None Include="Resources\database.png" />
+    <Content Include="Resources\Icon1.ico" />
+    <None Include="Resources\offline.ico" />
+    <None Include="Resources\offlineIcon.png" />
+    <None Include="Resources\icone-imprimante.png" />
+    <None Include="Resources\printerIcon.png" />
+    <None Include="Resources\printerIcon2.jpg" />
+    <None Include="Resources\printerIcon3.png" />
+    <None Include="Resources\printer.png" />
+    <None Include="Resources\reboot.png" />
+    <Content Include="Resources\save.png" />
+    <None Include="Resources\start_scan.jpg" />
+    <None Include="Resources\shutdown.png" />
+    <Content Include="Resources\stop.png" />
+    <None Include="Resources\test.bmp" />
+    <Content Include="Resources\towerCase.jpg" />
+    <None Include="Resources\VNC_icon.png" />
+    <None Include="Resources\unequal.jpg" />
+    <None Include="Resources\UCI Viewer Selection Panel icon.png" />
+    <None Include="Resources\unread.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="bin\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

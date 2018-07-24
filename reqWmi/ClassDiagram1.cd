@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="NameAndType">
+  <Class Name="cMySqlStationLogsTable">
+    <Position X="1.75" Y="0.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAQAAEAAAADAABAAAgAAAQAAAAIwAAAAAAAAAAACAAQ=</HashCode>
+      <FileName>classes\SQL\cMySqlstationLogsTable.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="cMySqlStationTable">
+    <Position X="6" Y="0.5" Width="3.75" />
+    <TypeIdentifier>
+      <HashCode>AAQAAEAAAADAAAgAAAAAAAmBABAAAAEABAgAZCAAAAA=</HashCode>
+      <FileName>classes\SQL\cMySqlStationTable.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Tahoma" Size="8.25" />
+</ClassDiagram>
