@@ -10,9 +10,9 @@ Imports System.Runtime.InteropServices
 
 <Assembly: AssemblyTitle("ConsoleApplication1")> 
 <Assembly: AssemblyDescription("")> 
-<Assembly: AssemblyCompany("CHU Bordeaux")> 
+<Assembly: AssemblyCompany("")> 
 <Assembly: AssemblyProduct("ConsoleApplication1")> 
-<Assembly: AssemblyCopyright("Copyright © CHU Bordeaux 2013")> 
+<Assembly: AssemblyCopyright("")> 
 <Assembly: AssemblyTrademark("")> 
 
 <Assembly: ComVisible(False)>
