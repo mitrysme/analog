@@ -129,7 +129,7 @@ Namespace My
         
         <Global.System.Configuration.UserScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("P00CAPX010")>  _
+         Global.System.Configuration.DefaultSettingValueAttribute("")>  _
         Public Property sScanServer() As String
             Get
                 Return CType(Me("sScanServer"),String)
@@ -495,6 +495,15 @@ Namespace My
             Set
                 Me("uintPingTimeout") = value
             End Set
+        End Property
+        
+        <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("contacttest@domaint.test")>  _
+        Public ReadOnly Property sConcactURL() As String
+            Get
+                Return CType(Me("sConcactURL"),String)
+            End Get
         End Property
     End Class
 End Namespace

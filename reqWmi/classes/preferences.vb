@@ -53,6 +53,8 @@ Public Class preferences
     Private _smtpServerAddress As String
     ' préférence timeout Ping
     Private _uintPingTimeout As UShort
+    ' auteurURL
+    Private _sContactURL As String
 
 
 #Region "Getter/setter"
@@ -298,6 +300,14 @@ Public Class preferences
             _uintPingTimeout = value
         End Set
     End Property
+    Public Property sContactURL() As String
+        Get
+            Return _sContactURL
+        End Get
+        Set(value As String)
+            _sContactURL = value
+        End Set
+    End Property
 
 #End Region
 
@@ -351,6 +361,8 @@ Public Class preferences
                 _bSaveSessionTabs = .bSaveSessionTabs
                 ' Ping timeout
                 _uintPingTimeout = .uintPingTimeout
+                ' contact
+                _sContactURL = .sConcactURL
             End If
 
             If program.isServerMode Then
@@ -427,6 +439,8 @@ Public Class preferences
             .bSaveSessionTabs = _bSaveSessionTabs
             ' ping timeout 
             .uintPingTimeout = _uintPingTimeout
+            ' Contact
+            '.sConcactURL = _sContactURL
         End With
     End Sub
 

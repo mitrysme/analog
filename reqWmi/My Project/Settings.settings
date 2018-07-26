@@ -22,7 +22,7 @@
       <Value Profile="(Default)">Tous</Value>
     </Setting>
     <Setting Name="sScanServer" Type="System.String" Scope="User">
-      <Value Profile="(Default)">P00CAPX010</Value>
+      <Value Profile="(Default)" />
     </Setting>
     <Setting Name="sScanServerDataFolder" Type="System.String" Scope="User">
       <Value Profile="(Default)">c$\analogScanData</Value>
@@ -118,6 +118,9 @@
     </Setting>
     <Setting Name="uintPingTimeout" Type="System.UInt16" Scope="User">
       <Value Profile="(Default)">1000</Value>
+    </Setting>
+    <Setting Name="sConcactURL" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">contacttest@domaint.test</Value>
     </Setting>
   </Settings>
 </SettingsFile>
