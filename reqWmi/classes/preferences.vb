@@ -439,8 +439,6 @@ Public Class preferences
             .bSaveSessionTabs = _bSaveSessionTabs
             ' ping timeout 
             .uintPingTimeout = _uintPingTimeout
-            ' Contact
-            '.sConcactURL = _sContactURL
         End With
     End Sub
 
