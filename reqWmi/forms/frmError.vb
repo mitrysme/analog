@@ -151,7 +151,7 @@ Public Class frmError
                               ByVal e As System.EventArgs) Handles btSend.Click
 
         Dim fromUser As String = String.Format("{0}@{1}", Environment.UserName, Environment.UserDomainName)
-        Dim toUser As String = "dimitri.darcam.exterieur@chu-bordeaux.fr"
+        Dim toUser As String = program.preferences.sContactURL
 
         ' rajout des commentaires dans le rapport
         Me.txtReport.Text &= "Commentaires : "
