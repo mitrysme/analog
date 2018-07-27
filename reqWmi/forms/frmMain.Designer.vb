@@ -282,6 +282,8 @@ Partial Class frmMain
         Me.ColumnHeader23 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ColumnHeader24 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
+        Me.tbBuild = New System.Windows.Forms.TextBox()
+        Me.lblBuild = New System.Windows.Forms.Label()
         Me.CpuGraph = New cpuGraph()
         Me.DiskIOGraph = New diskIOGraph()
         Me.FreeMemoryGraph = New freeMemoryGraph()
@@ -498,7 +500,7 @@ Partial Class frmMain
         Me.CollapsiblePanelVideoController.Controls.Add(Me.tbCaption)
         Me.CollapsiblePanelVideoController.EndColour = System.Drawing.Color.FromArgb(CType(CType(199, Byte), Integer), CType(CType(212, Byte), Integer), CType(CType(247, Byte), Integer))
         Me.CollapsiblePanelVideoController.Image = Nothing
-        Me.CollapsiblePanelVideoController.Location = New System.Drawing.Point(4, 1083)
+        Me.CollapsiblePanelVideoController.Location = New System.Drawing.Point(4, 1110)
         Me.CollapsiblePanelVideoController.Margin = New System.Windows.Forms.Padding(1)
         Me.CollapsiblePanelVideoController.Name = "CollapsiblePanelVideoController"
         Me.CollapsiblePanelVideoController.PanelState = Salamander.Windows.Forms.PanelState.Expanded
@@ -726,7 +728,7 @@ Partial Class frmMain
         Me.CollapsiblePanelDisplay.Controls.Add(Me.Label26)
         Me.CollapsiblePanelDisplay.EndColour = System.Drawing.Color.FromArgb(CType(CType(199, Byte), Integer), CType(CType(212, Byte), Integer), CType(CType(247, Byte), Integer))
         Me.CollapsiblePanelDisplay.Image = Nothing
-        Me.CollapsiblePanelDisplay.Location = New System.Drawing.Point(4, 955)
+        Me.CollapsiblePanelDisplay.Location = New System.Drawing.Point(4, 982)
         Me.CollapsiblePanelDisplay.Margin = New System.Windows.Forms.Padding(1)
         Me.CollapsiblePanelDisplay.Name = "CollapsiblePanelDisplay"
         Me.CollapsiblePanelDisplay.PanelState = Salamander.Windows.Forms.PanelState.Expanded
@@ -881,7 +883,7 @@ Partial Class frmMain
         Me.CollapsiblePanelNetwork.Controls.Add(Me.tbMACadress)
         Me.CollapsiblePanelNetwork.EndColour = System.Drawing.Color.FromArgb(CType(CType(199, Byte), Integer), CType(CType(212, Byte), Integer), CType(CType(247, Byte), Integer))
         Me.CollapsiblePanelNetwork.Image = Nothing
-        Me.CollapsiblePanelNetwork.Location = New System.Drawing.Point(4, 631)
+        Me.CollapsiblePanelNetwork.Location = New System.Drawing.Point(4, 658)
         Me.CollapsiblePanelNetwork.Margin = New System.Windows.Forms.Padding(1)
         Me.CollapsiblePanelNetwork.Name = "CollapsiblePanelNetwork"
         Me.CollapsiblePanelNetwork.PanelState = Salamander.Windows.Forms.PanelState.Expanded
@@ -1171,6 +1173,8 @@ Partial Class frmMain
         Me.CollapsiblePanelOs.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.CollapsiblePanelOs.BackColor = System.Drawing.Color.Lavender
+        Me.CollapsiblePanelOs.Controls.Add(Me.tbBuild)
+        Me.CollapsiblePanelOs.Controls.Add(Me.lblBuild)
         Me.CollapsiblePanelOs.Controls.Add(Me.tbOsDateInstall)
         Me.CollapsiblePanelOs.Controls.Add(Me.lblOSDateInstall)
         Me.CollapsiblePanelOs.Controls.Add(Me.tbOsArch)
@@ -1190,7 +1194,7 @@ Partial Class frmMain
         Me.CollapsiblePanelOs.Margin = New System.Windows.Forms.Padding(1)
         Me.CollapsiblePanelOs.Name = "CollapsiblePanelOs"
         Me.CollapsiblePanelOs.PanelState = Salamander.Windows.Forms.PanelState.Expanded
-        Me.CollapsiblePanelOs.Size = New System.Drawing.Size(265, 177)
+        Me.CollapsiblePanelOs.Size = New System.Drawing.Size(265, 204)
         Me.CollapsiblePanelOs.StartColour = System.Drawing.Color.White
         Me.CollapsiblePanelOs.TabIndex = 1
         Me.CollapsiblePanelOs.TitleFont = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -1416,6 +1420,7 @@ Partial Class frmMain
         Me.lblReservIP.Size = New System.Drawing.Size(41, 15)
         Me.lblReservIP.TabIndex = 84
         Me.lblReservIP.Text = "Res.IP"
+        Me.lblReservIP.Visible = False
         '
         'lblDHCP
         '
@@ -1428,6 +1433,7 @@ Partial Class frmMain
         Me.lblDHCP.Size = New System.Drawing.Size(39, 15)
         Me.lblDHCP.TabIndex = 83
         Me.lblDHCP.Text = "DHCP"
+        Me.lblDHCP.Visible = False
         '
         'lblWGA
         '
@@ -1440,6 +1446,7 @@ Partial Class frmMain
         Me.lblWGA.Size = New System.Drawing.Size(35, 15)
         Me.lblWGA.TabIndex = 82
         Me.lblWGA.Text = "WGA"
+        Me.lblWGA.Visible = False
         '
         'TableLayoutPanel1
         '
@@ -2938,7 +2945,7 @@ Partial Class frmMain
         Me.CollapsiblePanelActiveDirectory.Controls.Add(Me.tbADComputerCreationDate)
         Me.CollapsiblePanelActiveDirectory.EndColour = System.Drawing.Color.FromArgb(CType(CType(199, Byte), Integer), CType(CType(212, Byte), Integer), CType(CType(247, Byte), Integer))
         Me.CollapsiblePanelActiveDirectory.Image = Nothing
-        Me.CollapsiblePanelActiveDirectory.Location = New System.Drawing.Point(4, 479)
+        Me.CollapsiblePanelActiveDirectory.Location = New System.Drawing.Point(4, 506)
         Me.CollapsiblePanelActiveDirectory.Margin = New System.Windows.Forms.Padding(1)
         Me.CollapsiblePanelActiveDirectory.Name = "CollapsiblePanelActiveDirectory"
         Me.CollapsiblePanelActiveDirectory.PanelState = Salamander.Windows.Forms.PanelState.Expanded
@@ -3064,6 +3071,24 @@ Partial Class frmMain
         Me.MenuStrip1.Size = New System.Drawing.Size(267, 24)
         Me.MenuStrip1.TabIndex = 9
         Me.MenuStrip1.Text = "MenuStrip1"
+        '
+        'tbBuild
+        '
+        Me.tbBuild.BackColor = System.Drawing.SystemColors.Info
+        Me.tbBuild.Location = New System.Drawing.Point(61, 174)
+        Me.tbBuild.Name = "tbBuild"
+        Me.tbBuild.ReadOnly = True
+        Me.tbBuild.Size = New System.Drawing.Size(184, 20)
+        Me.tbBuild.TabIndex = 15
+        '
+        'lblBuild
+        '
+        Me.lblBuild.AutoSize = True
+        Me.lblBuild.Location = New System.Drawing.Point(6, 177)
+        Me.lblBuild.Name = "lblBuild"
+        Me.lblBuild.Size = New System.Drawing.Size(30, 13)
+        Me.lblBuild.TabIndex = 14
+        Me.lblBuild.Text = "Build"
         '
         'CpuGraph
         '
@@ -3778,4 +3803,6 @@ Partial Class frmMain
     Friend WithEvents lblOSDateInstall As Label
     Friend WithEvents FermerOngletToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents lblBetaVersion As Label
+    Friend WithEvents tbBuild As TextBox
+    Friend WithEvents lblBuild As Label
 End Class

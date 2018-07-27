@@ -210,6 +210,7 @@ Public Class cgInfosStation
             Return _osInstallDate
         End Get
     End Property
+
 #End Region
 
     Public Structure networkAdapter

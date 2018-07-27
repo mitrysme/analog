@@ -1282,6 +1282,7 @@ Public Class frmMain
             Me.tbUpTime.Text = .uptime
             Me.tbOsArch.Text = .addressWidth
             Me.tbOsDateInstall.Text = .osInstallDate.ToString
+            Me.tbBuild.Text = .version
         End With
 
         If _station.gInfoStation.addressWidth = "64 bits" Then
