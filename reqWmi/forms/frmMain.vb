@@ -393,7 +393,7 @@ Public Class frmMain
     End Sub
 
     Private Sub Form1_Load(ByVal sender As Object,
-                           ByVal e As System.EventArgs) Handles Me.Load
+                           ByVal e As System.EventArgs)
 
         getAllcontrolRecursive(Me)
         '
@@ -950,10 +950,10 @@ Public Class frmMain
         End If
 
         If Not _station Is Nothing Then
-                If textStation = _station.stationName Then
-                    bscanSameStation = True
-                End If
+            If textStation = _station.stationName Then
+                bscanSameStation = True
             End If
+        End If
 
         If Not program.frmMdiContainer.isTabAlreadyOpened(textStation) Or bscanSameStation Then
             Me.resetForm()
@@ -1335,8 +1335,7 @@ Public Class frmMain
     End Sub
 
     Private Sub videoControllerPrevNext(ByVal sender As Object,
-                                        ByVal e As System.EventArgs) Handles btVideoControllerNext.Click,
-                                                                             btVideoControllerPrev.Click
+                                        ByVal e As System.EventArgs)
 
         Dim bt As Button = CType(sender, Button)
 
@@ -1430,8 +1429,7 @@ Public Class frmMain
     End Sub
 
     Private Sub networkPrevNext(ByVal sender As Object,
-                                ByVal e As System.EventArgs) Handles btNext.Click,
-                                                                     btPrev.Click
+                                ByVal e As System.EventArgs)
 
         Dim bt As Button = CType(sender, Button)
 
@@ -1479,8 +1477,7 @@ Public Class frmMain
     End Sub
 
     Private Sub displayPrevNext(ByVal sender As Object,
-                                ByVal e As System.EventArgs) Handles btDisplayNext.Click,
-                                                                     btDisplayPrev.Click
+                                ByVal e As System.EventArgs)
 
         Dim bt As Button = CType(sender, Button)
 
@@ -1630,7 +1627,7 @@ Public Class frmMain
     End Sub
 
     Private Sub AfficherPanneauLatéralToolStripMenuItem_Click(ByVal sender As Object,
-                                                              ByVal e As System.EventArgs) Handles ToolStripMenuItemPanneauLateral.Click
+                                                              ByVal e As System.EventArgs)
 
         Dim tsmi As ToolStripMenuItem = CType(sender, ToolStripMenuItem)
         tsmi.Checked = Not tsmi.Checked
@@ -1639,7 +1636,7 @@ Public Class frmMain
     End Sub
 
     Private Sub AfficherLogsToolStripMenuItem_Click(ByVal sender As Object,
-                                                    ByVal e As System.EventArgs) Handles ToolStripMenuItemLogs.Click
+                                                    ByVal e As System.EventArgs)
 
         Dim tsmi As ToolStripMenuItem = CType(sender, ToolStripMenuItem)
         tsmi.Checked = Not tsmi.Checked
@@ -1649,18 +1646,18 @@ Public Class frmMain
 
     End Sub
 
-    Private Sub QuitterToolStripMenuItem1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles QuitterToolStripMenuItem1.Click
+    Private Sub QuitterToolStripMenuItem1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
         Application.Exit()
     End Sub
 
     Private Sub InfosUtilisateurToolStripMenuItem_Click(ByVal sender As System.Object,
-                                                        ByVal e As System.EventArgs) Handles InfosUtilisateurToolStripMenuItem1.Click
+                                                        ByVal e As System.EventArgs)
 
         showfrmLDAPUSER()
     End Sub
 
     Private Sub InfosHDDToolStripMenuItem_click(ByVal sender As System.Object,
-                                                ByVal e As System.EventArgs) Handles InfosHDDToolStripMenuItem.Click
+                                                ByVal e As System.EventArgs)
 
         If _station Is Nothing Then Return
 
@@ -1691,7 +1688,7 @@ Public Class frmMain
     ''' </summary>
     ''' <param name="sender"></param>
     ''' <param name="e"></param>
-    Private Sub OuvrirConsoleCtrlkToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles OuvrirConsoleCtrlkToolStripMenuItem.Click
+    Private Sub OuvrirConsoleCtrlkToolStripMenuItem_Click(sender As Object, e As EventArgs)
         Dim prc As New System.Diagnostics.Process
 
         With prc
@@ -1702,40 +1699,40 @@ Public Class frmMain
         End With
     End Sub
 #Region "Psexec"
-    Private Sub DefragToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles DefragToolStripMenuItem.Click
+    Private Sub DefragToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
         psExec.defrag(_station.stationName)
     End Sub
 
-    Private Sub DefragAnalyseToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles DefragAnalyseToolStripMenuItem.Click
+    Private Sub DefragAnalyseToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
         psExec.defrag(_station.stationName, True)
     End Sub
 
-    Private Sub RedémarrerToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles RedémarrerToolStripMenuItem.Click
+    Private Sub RedémarrerToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
         psExec.shutdownOrReboot(_station.stationName, True)
     End Sub
 
-    Private Sub RedémarrerForcerToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles RedémarrerForcerToolStripMenuItem.Click
+    Private Sub RedémarrerForcerToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
         psExec.shutdownOrReboot(_station.stationName, True, True)
     End Sub
 
-    Private Sub ArreterToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ArreterToolStripMenuItem.Click
+    Private Sub ArreterToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
         psExec.shutdownOrReboot(_station.stationName)
     End Sub
 
-    Private Sub ArrêterForcerToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ArreterForcerToolStripMenuItem.Click
+    Private Sub ArrêterForcerToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
         psExec.shutdownOrReboot(_station.stationName, False, True)
     End Sub
 
-    Private Sub ChkdskF_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ChkdskFToolStripMenuItem.Click
+    Private Sub ChkdskF_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
         psExec.chkdsk(_station.stationName)
     End Sub
 
-    Private Sub ChkdskFR_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ChkdskFRToolStripMenuItem.Click
+    Private Sub ChkdskFR_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
         psExec.chkdsk(_station.stationName, True)
     End Sub
 
 
-    Private Sub ConsoleToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ConsoleToolStripMenuItem.Click
+    Private Sub ConsoleToolStripMenuItem_Click(sender As Object, e As EventArgs)
         If _station Is Nothing OrElse _station.stationName = String.Empty Then
             Exit Sub
         End If
@@ -1743,7 +1740,7 @@ Public Class frmMain
         psExec.openRemotConsole(_station.stationName)
     End Sub
 
-    Private Sub VNCQueryConnectToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles VNCQueryConnectToolStripMenuItem.Click
+    Private Sub VNCQueryConnectToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
         Dim stationName As String = station.stationName
 
         Try
@@ -1753,7 +1750,7 @@ Public Class frmMain
         End Try
     End Sub
 
-    Private Sub VNCNotificationToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles VNCNotificationToolStripMenuItem.Click
+    Private Sub VNCNotificationToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
         Dim errMessage As String = ""
         Dim stationName As String = station.stationName
         Dim ok As Boolean = cregistry.SetVNCNotification(stationName, errMessage)
@@ -1763,7 +1760,7 @@ Public Class frmMain
         End If
     End Sub
 
-    Private Sub SCCMValidationToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles SCCMValidationToolStripMenuItem.Click
+    Private Sub SCCMValidationToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
         Try
             cregistry.SetSCCMViewerQueryConnect(station.stationName)
         Catch ex As Exception
@@ -1775,7 +1772,7 @@ Public Class frmMain
 #End Region
 
     Private Sub cmbStationName_TextChanged(ByVal sender As Object,
-                                           ByVal e As System.EventArgs) Handles cmbStationName.TextChanged
+                                           ByVal e As System.EventArgs)
 
         Dim cmbb As ComboBox = CType(sender, ComboBox)
 
@@ -1793,10 +1790,7 @@ Public Class frmMain
     ''' <param name="e"></param>
     ''' <remarks></remarks>
     Private Sub ckbFilterPrograms(ByVal sender As Object,
-                                  ByVal e As System.EventArgs) Handles ckbChuFilter.Click,
-                                                                        ckbFilterMicrosoft.Click,
-                                                                        ckbFilterHorsSujet.Click,
-                                                                        ckbHighlistProgDiff.Click
+                                  ByVal e As System.EventArgs)
 
         Dim ckb As CheckBox = CType(sender, CheckBox)
 
@@ -1859,7 +1853,7 @@ Public Class frmMain
         End If
     End Function
 
-    Private Sub RsopToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles RsopToolStripMenuItem.Click
+    Private Sub RsopToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
         Dim frmrsop As New frmRsop(_station.stationName, _station.gInfoStation.userName)
         frmrsop.Show()
     End Sub
@@ -1870,7 +1864,7 @@ Public Class frmMain
     ''' <param name="sender"></param>
     ''' <param name="e"></param>
     ''' <remarks></remarks>
-    Private Sub analog_keyPressed(ByVal sender As Object, ByVal e As KeyEventArgs) Handles Me.KeyDown
+    Private Sub analog_keyPressed(ByVal sender As Object, ByVal e As KeyEventArgs)
 
         Select Case e.KeyCode
             Case Keys.Return
@@ -1896,7 +1890,7 @@ Public Class frmMain
     ''' </summary>
     ''' <remarks>
     ''' </remarks>
-    Private Sub frmMain_FormClosing(ByVal sender As System.Object, ByVal e As System.Windows.Forms.FormClosingEventArgs) Handles MyBase.FormClosing
+    Private Sub frmMain_FormClosing(ByVal sender As System.Object, ByVal e As System.Windows.Forms.FormClosingEventArgs)
         If e.CloseReason = CloseReason.MdiFormClosing Then
             e.Cancel = True
             Return
@@ -2020,7 +2014,7 @@ Public Class frmMain
     End Sub
 
 #Region "ContextMenuDisk"
-    Private Sub OuvrirToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles OuvrirToolStripMenuItem.Click, LvInfoDisk.DoubleClick
+    Private Sub OuvrirToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles LvInfoDisk.DoubleClick
         Dim diskpart As String = String.Empty
         Dim disktype As String = String.Empty
 

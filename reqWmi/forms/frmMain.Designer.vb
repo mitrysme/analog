@@ -1636,6 +1636,7 @@ Partial Class frmMain
         Me.ckbFilterHorsSujet.TabIndex = 45
         Me.ckbFilterHorsSujet.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         Me.ckbFilterHorsSujet.UseVisualStyleBackColor = True
+        Me.ckbFilterHorsSujet.Visible = False
         '
         'ckbFilterMicrosoft
         '
@@ -1651,6 +1652,7 @@ Partial Class frmMain
         Me.ckbFilterMicrosoft.TabIndex = 36
         Me.ckbFilterMicrosoft.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         Me.ckbFilterMicrosoft.UseVisualStyleBackColor = True
+        Me.ckbFilterMicrosoft.Visible = False
         '
         'ckbChuFilter
         '
@@ -1669,6 +1671,7 @@ Partial Class frmMain
         Me.ckbChuFilter.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         Me.ckbChuFilter.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.ckbChuFilter.UseVisualStyleBackColor = True
+        Me.ckbChuFilter.Visible = False
         '
         'SplitContainer4
         '
