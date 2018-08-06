@@ -53,8 +53,12 @@ Public Class preferences
     Private _smtpServerAddress As String
     ' préférence timeout Ping
     Private _uintPingTimeout As UShort
-    ' auteurURL
+    ' contactURL
     Private _sContactURL As String
+    ' compte pour envoi message crash
+    Private _sMailNTAccount As String
+    ' Serveur de messagerie pour envoi message crash
+    Private _sMailServer As String
 
 
 #Region "Getter/setter"
@@ -308,6 +312,22 @@ Public Class preferences
             _sContactURL = value
         End Set
     End Property
+    Public Property sMailNTAccount As String
+        Get
+            Return _sMailNTAccount
+        End Get
+        Set(value As String)
+            _sMailNTAccount = value
+        End Set
+    End Property
+    Public Property sMailServer As String
+        Get
+            Return _sMailServer
+        End Get
+        Set(value As String)
+            _sMailServer = value
+        End Set
+    End Property
 
 #End Region
 
@@ -363,6 +383,10 @@ Public Class preferences
                 _uintPingTimeout = .uintPingTimeout
                 ' contact
                 _sContactURL = .sConcactURL
+                ' Compte de messagerie pour envoi message crash
+                _sMailNTAccount = .sMailNTAccount
+                ' Serveur de messagerie pour envoi message crash
+                _sMailServer = sMailServer
             End If
 
             If program.isServerMode Then
@@ -439,6 +463,11 @@ Public Class preferences
             .bSaveSessionTabs = _bSaveSessionTabs
             ' ping timeout 
             .uintPingTimeout = _uintPingTimeout
+
+            ' Compte de messagerie pour envoi message crash
+            .sMailNTAccount = _sMailNTAccount
+            ' Serveur de messagerie pour envoi message crash
+            .sMailServer = _sMailServer
         End With
     End Sub
 

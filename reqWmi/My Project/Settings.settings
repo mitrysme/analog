@@ -122,5 +122,11 @@
     <Setting Name="sConcactURL" Type="System.String" Scope="Application">
       <Value Profile="(Default)">contacttest@domaint.test</Value>
     </Setting>
+    <Setting Name="sMailNTAccount" Type="System.String" Scope="User">
+      <Value Profile="(Default)">user</Value>
+    </Setting>
+    <Setting Name="sMailServer" Type="System.String" Scope="User">
+      <Value Profile="(Default)">server@domain.test</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

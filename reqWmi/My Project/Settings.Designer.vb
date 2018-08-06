@@ -505,6 +505,30 @@ Namespace My
                 Return CType(Me("sConcactURL"),String)
             End Get
         End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("user")>  _
+        Public Property sMailNTAccount() As String
+            Get
+                Return CType(Me("sMailNTAccount"),String)
+            End Get
+            Set
+                Me("sMailNTAccount") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("server@domain.test")>  _
+        Public Property sMailServer() As String
+            Get
+                Return CType(Me("sMailServer"),String)
+            End Get
+            Set
+                Me("sMailServer") = value
+            End Set
+        End Property
     End Class
 End Namespace
 

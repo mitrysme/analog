@@ -32,10 +32,10 @@ Namespace Analog.functions
                                         ByVal pSubject As String,
                                         ByVal pContent As String) As Boolean
 
-            Dim _smtpClient As New SmtpClient("nsbx.chu-bordeaux.fr")
+            Dim _smtpClient As New SmtpClient(program.preferences.sMailServer)
             Dim _smtpCred As New System.Net.NetworkCredential
 
-            _smtpCred.UserName = "t6darcamd"
+            _smtpCred.UserName = program.preferences.sMailNTAccount
             _smtpClient.Credentials = _smtpCred
 
             Try
