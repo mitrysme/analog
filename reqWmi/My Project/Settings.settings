@@ -67,7 +67,7 @@
       <Value Profile="(Default)">True</Value>
     </Setting>
     <Setting Name="sDBServer" Type="System.String" Scope="User">
-      <Value Profile="(Default)">analog</Value>
+      <Value Profile="(Default)">myanalog</Value>
     </Setting>
     <Setting Name="sDBDatasource" Type="System.String" Scope="User">
       <Value Profile="(Default)">analog</Value>

@@ -1829,11 +1829,19 @@ Public Class frmMain
         End If
     End Sub
 
+
+    ''' <summary>
+    ''' Mets à jour les boutons de filtre programmes
+    ''' 
+    ''' ==> à supprimer car les boutons sont tous invisibles 
+    ''' </summary>
     Private Sub updateTbSearchProgram()
         Me.tbSearchProgram.Enabled = True
 
         For Each CheckBox As CheckBox In PanelProgramFilterButtons.Controls
+            ' If CheckBox.Visible = True Then
             CheckBox.Enabled = True
+            'End If
         Next
     End Sub
 
@@ -1891,7 +1899,7 @@ Public Class frmMain
     ''' </summary>
     ''' <remarks>
     ''' </remarks>
-    Private Sub frmMain_FormClosing(ByVal sender As System.Object, ByVal e As System.Windows.Forms.FormClosingEventArgs)
+    Private Sub frmMain_FormClosing(ByVal sender As System.Object, ByVal e As System.Windows.Forms.FormClosingEventArgs) Handles MyBase.FormClosing
         If e.CloseReason = CloseReason.MdiFormClosing Then
             e.Cancel = True
             Return

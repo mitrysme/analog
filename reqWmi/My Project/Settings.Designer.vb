@@ -309,7 +309,7 @@ Namespace My
         
         <Global.System.Configuration.UserScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("analog")>  _
+         Global.System.Configuration.DefaultSettingValueAttribute("myanalog")>  _
         Public Property sDBServer() As String
             Get
                 Return CType(Me("sDBServer"),String)

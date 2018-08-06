@@ -105,6 +105,8 @@ Partial Class frmMain
         Me.Label22 = New System.Windows.Forms.Label()
         Me.tbMACadress = New System.Windows.Forms.TextBox()
         Me.CollapsiblePanelOs = New Salamander.Windows.Forms.CollapsiblePanel()
+        Me.tbBuild = New System.Windows.Forms.TextBox()
+        Me.lblBuild = New System.Windows.Forms.Label()
         Me.tbOsDateInstall = New System.Windows.Forms.TextBox()
         Me.lblOSDateInstall = New System.Windows.Forms.Label()
         Me.tbOsArch = New System.Windows.Forms.TextBox()
@@ -127,6 +129,10 @@ Partial Class frmMain
         Me.lblDHCP = New System.Windows.Forms.Label()
         Me.lblWGA = New System.Windows.Forms.Label()
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
+        Me.CpuGraph = New cpuGraph()
+        Me.DiskIOGraph = New diskIOGraph()
+        Me.FreeMemoryGraph = New freeMemoryGraph()
+        Me.NetworkIOgraph = New networkIOgraph()
         Me.lblNetIO = New System.Windows.Forms.Label()
         Me.lblDiskIO = New System.Windows.Forms.Label()
         Me.lblFreeRam = New System.Windows.Forms.Label()
@@ -149,12 +155,46 @@ Partial Class frmMain
         Me.Label39 = New System.Windows.Forms.Label()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.tbSearchProgram = New System.Windows.Forms.TextBox()
+        Me.LvPrograms = New lvPrograms()
+        Me.ColumnHeader3 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader4 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader16 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader18 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader19 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.tabProcess = New System.Windows.Forms.TabPage()
+        Me.LvProcess = New lvProcess()
+        Me.ColumnHeader7 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader1 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader2 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader5 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader6 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader13 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader14 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader15 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader25 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader26 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader27 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.tabServices = New System.Windows.Forms.TabPage()
+        Me.LvServices = New lvServices(Me.components)
+        Me.ColumnHeaderNom = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeaderDescription = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeaderStatus = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeaderDemarrage = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeaderCompte = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeaderPath = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeaderServiceType = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeaderProcessPID = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.TabCommentaires = New System.Windows.Forms.TabPage()
         Me.SplitContainerCommentaires = New System.Windows.Forms.SplitContainer()
         Me.btnSendCommentaire = New System.Windows.Forms.Button()
         Me.rtbCommentairesInput = New System.Windows.Forms.RichTextBox()
+        Me.PanelSearchcommentaires = New gradientPanel()
+        Me.btLastComments = New System.Windows.Forms.Button()
+        Me.cbAssocierStation = New System.Windows.Forms.CheckBox()
+        Me.PanelSearchCommentaire = New System.Windows.Forms.Panel()
+        Me.pbLoupe = New System.Windows.Forms.PictureBox()
+        Me.lbNbResultsCount = New System.Windows.Forms.Label()
+        Me.tbSearchCommentaire = New System.Windows.Forms.TextBox()
         Me.lvLog = New System.Windows.Forms.ListView()
         Me.ColumnHeader22 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.btnPrinterInfos = New System.Windows.Forms.Button()
@@ -192,6 +232,13 @@ Partial Class frmMain
         Me.Label1 = New System.Windows.Forms.Label()
         Me.btnlancer = New System.Windows.Forms.Button()
         Me.GroupBoxDisk = New System.Windows.Forms.GroupBox()
+        Me.LvInfoDisk = New lvInfoDisk()
+        Me.columnHeader8 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader9 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader10 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader11 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader20 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader12 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ContextMenuStripDisk = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.OuvrirToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SMARTToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -282,53 +329,6 @@ Partial Class frmMain
         Me.ColumnHeader23 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ColumnHeader24 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
-        Me.tbBuild = New System.Windows.Forms.TextBox()
-        Me.lblBuild = New System.Windows.Forms.Label()
-        Me.CpuGraph = New cpuGraph()
-        Me.DiskIOGraph = New diskIOGraph()
-        Me.FreeMemoryGraph = New freeMemoryGraph()
-        Me.NetworkIOgraph = New networkIOgraph()
-        Me.LvPrograms = New lvPrograms()
-        Me.ColumnHeader3 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.ColumnHeader4 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.ColumnHeader16 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.ColumnHeader18 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.ColumnHeader19 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.LvProcess = New lvProcess()
-        Me.ColumnHeader7 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.ColumnHeader1 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.ColumnHeader2 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.ColumnHeader5 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.ColumnHeader6 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.ColumnHeader13 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.ColumnHeader14 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.ColumnHeader15 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.ColumnHeader25 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.ColumnHeader26 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.ColumnHeader27 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.LvServices = New lvServices(Me.components)
-        Me.ColumnHeaderNom = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.ColumnHeaderDescription = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.ColumnHeaderStatus = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.ColumnHeaderDemarrage = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.ColumnHeaderCompte = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.ColumnHeaderPath = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.ColumnHeaderServiceType = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.ColumnHeaderProcessPID = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.PanelSearchcommentaires = New gradientPanel()
-        Me.btLastComments = New System.Windows.Forms.Button()
-        Me.cbAssocierStation = New System.Windows.Forms.CheckBox()
-        Me.PanelSearchCommentaire = New System.Windows.Forms.Panel()
-        Me.pbLoupe = New System.Windows.Forms.PictureBox()
-        Me.lbNbResultsCount = New System.Windows.Forms.Label()
-        Me.tbSearchCommentaire = New System.Windows.Forms.TextBox()
-        Me.LvInfoDisk = New lvInfoDisk()
-        Me.columnHeader8 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.ColumnHeader9 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.ColumnHeader10 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.ColumnHeader11 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.ColumnHeader20 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.ColumnHeader12 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.StatusStripMain.SuspendLayout()
         Me.CollapsiblePanelVideoController.SuspendLayout()
         Me.PanelDetailvideoController.SuspendLayout()
@@ -362,6 +362,9 @@ Partial Class frmMain
         CType(Me.SplitContainerCommentaires, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SplitContainerCommentaires.Panel2.SuspendLayout()
         Me.SplitContainerCommentaires.SuspendLayout()
+        Me.PanelSearchcommentaires.SuspendLayout()
+        Me.PanelSearchCommentaire.SuspendLayout()
+        CType(Me.pbLoupe, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBoxResults.SuspendLayout()
         Me.panelLaunchButtons.SuspendLayout()
         Me.GroupBoxDisk.SuspendLayout()
@@ -376,9 +379,6 @@ Partial Class frmMain
         Me.collapsiblePanelOrdinateur.SuspendLayout()
         Me.CollapsiblePanelActiveDirectory.SuspendLayout()
         Me.MenuStrip1.SuspendLayout()
-        Me.PanelSearchcommentaires.SuspendLayout()
-        Me.PanelSearchCommentaire.SuspendLayout()
-        CType(Me.pbLoupe, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'ToolStripMenuItem1
@@ -1201,6 +1201,24 @@ Partial Class frmMain
         Me.CollapsiblePanelOs.TitleFontColour = System.Drawing.Color.Navy
         Me.CollapsiblePanelOs.TitleText = "Systeme Exploitation"
         '
+        'tbBuild
+        '
+        Me.tbBuild.BackColor = System.Drawing.SystemColors.Info
+        Me.tbBuild.Location = New System.Drawing.Point(61, 174)
+        Me.tbBuild.Name = "tbBuild"
+        Me.tbBuild.ReadOnly = True
+        Me.tbBuild.Size = New System.Drawing.Size(184, 20)
+        Me.tbBuild.TabIndex = 15
+        '
+        'lblBuild
+        '
+        Me.lblBuild.AutoSize = True
+        Me.lblBuild.Location = New System.Drawing.Point(6, 177)
+        Me.lblBuild.Name = "lblBuild"
+        Me.lblBuild.Size = New System.Drawing.Size(30, 13)
+        Me.lblBuild.TabIndex = 14
+        Me.lblBuild.Text = "Build"
+        '
         'tbOsDateInstall
         '
         Me.tbOsDateInstall.BackColor = System.Drawing.SystemColors.Info
@@ -1474,6 +1492,58 @@ Partial Class frmMain
         Me.TableLayoutPanel1.Size = New System.Drawing.Size(708, 66)
         Me.TableLayoutPanel1.TabIndex = 79
         '
+        'CpuGraph
+        '
+        Me.CpuGraph.BackColor = System.Drawing.Color.Black
+        Me.CpuGraph.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.CpuGraph.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.CpuGraph.Font = New System.Drawing.Font("Tahoma", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.World)
+        Me.CpuGraph.Location = New System.Drawing.Point(3, 3)
+        Me.CpuGraph.Name = "CpuGraph"
+        Me.CpuGraph.retryCount = 0
+        Me.CpuGraph.Size = New System.Drawing.Size(171, 45)
+        Me.CpuGraph.TabIndex = 73
+        Me.CpuGraph.title = "CPU"
+        '
+        'DiskIOGraph
+        '
+        Me.DiskIOGraph.BackColor = System.Drawing.Color.Black
+        Me.DiskIOGraph.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.DiskIOGraph.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.DiskIOGraph.Font = New System.Drawing.Font("Tahoma", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.World)
+        Me.DiskIOGraph.Location = New System.Drawing.Point(534, 3)
+        Me.DiskIOGraph.Name = "DiskIOGraph"
+        Me.DiskIOGraph.retryCount = 0
+        Me.DiskIOGraph.Size = New System.Drawing.Size(171, 45)
+        Me.DiskIOGraph.TabIndex = 76
+        Me.DiskIOGraph.title = "DiskIO"
+        '
+        'FreeMemoryGraph
+        '
+        Me.FreeMemoryGraph.BackColor = System.Drawing.Color.Black
+        Me.FreeMemoryGraph.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.FreeMemoryGraph.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.FreeMemoryGraph.Font = New System.Drawing.Font("Tahoma", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.World)
+        Me.FreeMemoryGraph.Location = New System.Drawing.Point(180, 3)
+        Me.FreeMemoryGraph.Name = "FreeMemoryGraph"
+        Me.FreeMemoryGraph.retryCount = 0
+        Me.FreeMemoryGraph.Size = New System.Drawing.Size(171, 45)
+        Me.FreeMemoryGraph.TabIndex = 74
+        Me.FreeMemoryGraph.title = "Ram"
+        '
+        'NetworkIOgraph
+        '
+        Me.NetworkIOgraph.BackColor = System.Drawing.Color.Black
+        Me.NetworkIOgraph.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.NetworkIOgraph.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.NetworkIOgraph.Font = New System.Drawing.Font("Tahoma", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.World)
+        Me.NetworkIOgraph.Location = New System.Drawing.Point(357, 3)
+        Me.NetworkIOgraph.Name = "NetworkIOgraph"
+        Me.NetworkIOgraph.retryCount = 0
+        Me.NetworkIOgraph.Size = New System.Drawing.Size(171, 45)
+        Me.NetworkIOgraph.TabIndex = 75
+        Me.NetworkIOgraph.title = "NetIO"
+        '
         'lblNetIO
         '
         Me.lblNetIO.AutoEllipsis = True
@@ -1617,6 +1687,7 @@ Partial Class frmMain
         Me.ckbHighlistProgDiff.TabIndex = 60
         Me.ckbHighlistProgDiff.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.ckbHighlistProgDiff.UseVisualStyleBackColor = True
+        Me.ckbHighlistProgDiff.Visible = False
         '
         'PanelProgramFilterButtons
         '
@@ -1778,6 +1849,43 @@ Partial Class frmMain
         Me.tbSearchProgram.Size = New System.Drawing.Size(190, 20)
         Me.tbSearchProgram.TabIndex = 16
         '
+        'LvPrograms
+        '
+        Me.LvPrograms.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader3, Me.ColumnHeader4, Me.ColumnHeader16, Me.ColumnHeader18, Me.ColumnHeader19})
+        Me.LvPrograms.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.LvPrograms.FullRowSelect = True
+        Me.LvPrograms.Location = New System.Drawing.Point(0, 0)
+        Me.LvPrograms.Name = "LvPrograms"
+        Me.LvPrograms.Size = New System.Drawing.Size(987, 327)
+        Me.LvPrograms.TabIndex = 62
+        Me.LvPrograms.UseCompatibleStateImageBehavior = False
+        Me.LvPrograms.View = System.Windows.Forms.View.Details
+        '
+        'ColumnHeader3
+        '
+        Me.ColumnHeader3.Text = "Program"
+        Me.ColumnHeader3.Width = 360
+        '
+        'ColumnHeader4
+        '
+        Me.ColumnHeader4.Text = "Version"
+        Me.ColumnHeader4.Width = 80
+        '
+        'ColumnHeader16
+        '
+        Me.ColumnHeader16.Text = "Publisher"
+        Me.ColumnHeader16.Width = 220
+        '
+        'ColumnHeader18
+        '
+        Me.ColumnHeader18.Text = "Date Install."
+        Me.ColumnHeader18.Width = 96
+        '
+        'ColumnHeader19
+        '
+        Me.ColumnHeader19.Text = "Uninstall String"
+        Me.ColumnHeader19.Width = 280
+        '
         'tabProcess
         '
         Me.tabProcess.Controls.Add(Me.LvProcess)
@@ -1789,6 +1897,68 @@ Partial Class frmMain
         Me.tabProcess.Text = "Process"
         Me.tabProcess.UseVisualStyleBackColor = True
         '
+        'LvProcess
+        '
+        Me.LvProcess.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader7, Me.ColumnHeader1, Me.ColumnHeader2, Me.ColumnHeader5, Me.ColumnHeader6, Me.ColumnHeader13, Me.ColumnHeader14, Me.ColumnHeader15, Me.ColumnHeader25, Me.ColumnHeader26, Me.ColumnHeader27})
+        Me.LvProcess.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.LvProcess.FullRowSelect = True
+        Me.LvProcess.Location = New System.Drawing.Point(3, 3)
+        Me.LvProcess.Name = "LvProcess"
+        Me.LvProcess.Size = New System.Drawing.Size(1045, 367)
+        Me.LvProcess.TabIndex = 3
+        Me.LvProcess.UseCompatibleStateImageBehavior = False
+        Me.LvProcess.View = System.Windows.Forms.View.Details
+        '
+        'ColumnHeader7
+        '
+        Me.ColumnHeader7.Text = "Name"
+        Me.ColumnHeader7.Width = 148
+        '
+        'ColumnHeader1
+        '
+        Me.ColumnHeader1.Text = "PID"
+        '
+        'ColumnHeader2
+        '
+        Me.ColumnHeader2.Text = "TotalCpu"
+        Me.ColumnHeader2.Width = 75
+        '
+        'ColumnHeader5
+        '
+        Me.ColumnHeader5.Text = "Threads"
+        '
+        'ColumnHeader6
+        '
+        Me.ColumnHeader6.Text = "Page Faults"
+        Me.ColumnHeader6.Width = 74
+        '
+        'ColumnHeader13
+        '
+        Me.ColumnHeader13.Text = "Path"
+        Me.ColumnHeader13.Width = 183
+        '
+        'ColumnHeader14
+        '
+        Me.ColumnHeader14.Text = "Username"
+        Me.ColumnHeader14.Width = 147
+        '
+        'ColumnHeader15
+        '
+        Me.ColumnHeader15.Text = "Cpu"
+        '
+        'ColumnHeader25
+        '
+        Me.ColumnHeader25.Text = "Util. Memoire (Ko)"
+        Me.ColumnHeader25.Width = 122
+        '
+        'ColumnHeader26
+        '
+        Me.ColumnHeader26.Text = "Priorite"
+        '
+        'ColumnHeader27
+        '
+        Me.ColumnHeader27.Text = "Parent Process"
+        '
         'tabServices
         '
         Me.tabServices.Controls.Add(Me.LvServices)
@@ -1799,6 +1969,56 @@ Partial Class frmMain
         Me.tabServices.TabIndex = 2
         Me.tabServices.Text = "Services"
         Me.tabServices.UseVisualStyleBackColor = True
+        '
+        'LvServices
+        '
+        Me.LvServices.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeaderNom, Me.ColumnHeaderDescription, Me.ColumnHeaderStatus, Me.ColumnHeaderDemarrage, Me.ColumnHeaderCompte, Me.ColumnHeaderPath, Me.ColumnHeaderServiceType, Me.ColumnHeaderProcessPID})
+        Me.LvServices.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.LvServices.FullRowSelect = True
+        Me.LvServices.Location = New System.Drawing.Point(3, 3)
+        Me.LvServices.MultiSelect = False
+        Me.LvServices.Name = "LvServices"
+        Me.LvServices.Size = New System.Drawing.Size(1045, 367)
+        Me.LvServices.TabIndex = 0
+        Me.LvServices.UseCompatibleStateImageBehavior = False
+        Me.LvServices.View = System.Windows.Forms.View.Details
+        '
+        'ColumnHeaderNom
+        '
+        Me.ColumnHeaderNom.Text = "Nom"
+        Me.ColumnHeaderNom.Width = 255
+        '
+        'ColumnHeaderDescription
+        '
+        Me.ColumnHeaderDescription.Text = "Description"
+        Me.ColumnHeaderDescription.Width = 262
+        '
+        'ColumnHeaderStatus
+        '
+        Me.ColumnHeaderStatus.Text = "Status"
+        '
+        'ColumnHeaderDemarrage
+        '
+        Me.ColumnHeaderDemarrage.Text = "Demarrage"
+        Me.ColumnHeaderDemarrage.Width = 75
+        '
+        'ColumnHeaderCompte
+        '
+        Me.ColumnHeaderCompte.Text = "Compte"
+        Me.ColumnHeaderCompte.Width = 138
+        '
+        'ColumnHeaderPath
+        '
+        Me.ColumnHeaderPath.Text = "Path"
+        '
+        'ColumnHeaderServiceType
+        '
+        Me.ColumnHeaderServiceType.Text = "Type"
+        '
+        'ColumnHeaderProcessPID
+        '
+        Me.ColumnHeaderProcessPID.Text = "ProcessPID"
+        Me.ColumnHeaderProcessPID.Width = 73
         '
         'TabCommentaires
         '
@@ -1852,6 +2072,78 @@ Partial Class frmMain
         Me.rtbCommentairesInput.Size = New System.Drawing.Size(1020, 48)
         Me.rtbCommentairesInput.TabIndex = 0
         Me.rtbCommentairesInput.Text = ""
+        '
+        'PanelSearchcommentaires
+        '
+        Me.PanelSearchcommentaires.BackColor = System.Drawing.Color.Lavender
+        Me.PanelSearchcommentaires.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.PanelSearchcommentaires.Controls.Add(Me.btLastComments)
+        Me.PanelSearchcommentaires.Controls.Add(Me.cbAssocierStation)
+        Me.PanelSearchcommentaires.Controls.Add(Me.PanelSearchCommentaire)
+        Me.PanelSearchcommentaires.Dock = System.Windows.Forms.DockStyle.Top
+        Me.PanelSearchcommentaires.Location = New System.Drawing.Point(3, 3)
+        Me.PanelSearchcommentaires.Name = "PanelSearchcommentaires"
+        Me.PanelSearchcommentaires.Size = New System.Drawing.Size(1045, 31)
+        Me.PanelSearchcommentaires.TabIndex = 0
+        '
+        'btLastComments
+        '
+        Me.btLastComments.Anchor = System.Windows.Forms.AnchorStyles.Right
+        Me.btLastComments.BackgroundImage = Global.My.Resources.Resources.unread
+        Me.btLastComments.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.btLastComments.Location = New System.Drawing.Point(665, 2)
+        Me.btLastComments.Name = "btLastComments"
+        Me.btLastComments.Size = New System.Drawing.Size(42, 23)
+        Me.btLastComments.TabIndex = 20
+        Me.btLastComments.UseVisualStyleBackColor = True
+        '
+        'cbAssocierStation
+        '
+        Me.cbAssocierStation.AutoSize = True
+        Me.cbAssocierStation.BackColor = System.Drawing.Color.Transparent
+        Me.cbAssocierStation.Location = New System.Drawing.Point(4, 4)
+        Me.cbAssocierStation.Name = "cbAssocierStation"
+        Me.cbAssocierStation.Size = New System.Drawing.Size(102, 17)
+        Me.cbAssocierStation.TabIndex = 19
+        Me.cbAssocierStation.Text = "Associer Station"
+        Me.cbAssocierStation.UseVisualStyleBackColor = False
+        '
+        'PanelSearchCommentaire
+        '
+        Me.PanelSearchCommentaire.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.PanelSearchCommentaire.BackColor = System.Drawing.Color.Transparent
+        Me.PanelSearchCommentaire.Controls.Add(Me.pbLoupe)
+        Me.PanelSearchCommentaire.Controls.Add(Me.lbNbResultsCount)
+        Me.PanelSearchCommentaire.Controls.Add(Me.tbSearchCommentaire)
+        Me.PanelSearchCommentaire.Location = New System.Drawing.Point(713, 1)
+        Me.PanelSearchCommentaire.Name = "PanelSearchCommentaire"
+        Me.PanelSearchCommentaire.Size = New System.Drawing.Size(326, 27)
+        Me.PanelSearchCommentaire.TabIndex = 17
+        '
+        'pbLoupe
+        '
+        Me.pbLoupe.Image = Global.My.Resources.Resources.magnifier
+        Me.pbLoupe.Location = New System.Drawing.Point(3, 3)
+        Me.pbLoupe.Name = "pbLoupe"
+        Me.pbLoupe.Size = New System.Drawing.Size(31, 21)
+        Me.pbLoupe.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.pbLoupe.TabIndex = 14
+        Me.pbLoupe.TabStop = False
+        '
+        'lbNbResultsCount
+        '
+        Me.lbNbResultsCount.AutoSize = True
+        Me.lbNbResultsCount.Location = New System.Drawing.Point(177, 8)
+        Me.lbNbResultsCount.Name = "lbNbResultsCount"
+        Me.lbNbResultsCount.Size = New System.Drawing.Size(0, 13)
+        Me.lbNbResultsCount.TabIndex = 15
+        '
+        'tbSearchCommentaire
+        '
+        Me.tbSearchCommentaire.Location = New System.Drawing.Point(40, 3)
+        Me.tbSearchCommentaire.Name = "tbSearchCommentaire"
+        Me.tbSearchCommentaire.Size = New System.Drawing.Size(281, 20)
+        Me.tbSearchCommentaire.TabIndex = 13
         '
         'lvLog
         '
@@ -2219,6 +2511,44 @@ Partial Class frmMain
         Me.GroupBoxDisk.TabIndex = 77
         Me.GroupBoxDisk.TabStop = False
         Me.GroupBoxDisk.Text = "Disk"
+        '
+        'LvInfoDisk
+        '
+        Me.LvInfoDisk.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.columnHeader8, Me.ColumnHeader9, Me.ColumnHeader10, Me.ColumnHeader11, Me.ColumnHeader20, Me.ColumnHeader12})
+        Me.LvInfoDisk.ContextMenuStrip = Me.ContextMenuStripDisk
+        Me.LvInfoDisk.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.LvInfoDisk.FullRowSelect = True
+        Me.LvInfoDisk.Location = New System.Drawing.Point(3, 16)
+        Me.LvInfoDisk.MultiSelect = False
+        Me.LvInfoDisk.Name = "LvInfoDisk"
+        Me.LvInfoDisk.Size = New System.Drawing.Size(295, 104)
+        Me.LvInfoDisk.TabIndex = 61
+        Me.LvInfoDisk.UseCompatibleStateImageBehavior = False
+        Me.LvInfoDisk.View = System.Windows.Forms.View.Details
+        '
+        'columnHeader8
+        '
+        Me.columnHeader8.Text = "Type"
+        '
+        'ColumnHeader9
+        '
+        Me.ColumnHeader9.Text = "Unité"
+        '
+        'ColumnHeader10
+        '
+        Me.ColumnHeader10.Text = "Capacité"
+        '
+        'ColumnHeader11
+        '
+        Me.ColumnHeader11.Text = "Libre"
+        '
+        'ColumnHeader20
+        '
+        Me.ColumnHeader20.Text = "% Libre"
+        '
+        'ColumnHeader12
+        '
+        Me.ColumnHeader12.Text = "Dirty"
         '
         'ContextMenuStripDisk
         '
@@ -3072,335 +3402,6 @@ Partial Class frmMain
         Me.MenuStrip1.TabIndex = 9
         Me.MenuStrip1.Text = "MenuStrip1"
         '
-        'tbBuild
-        '
-        Me.tbBuild.BackColor = System.Drawing.SystemColors.Info
-        Me.tbBuild.Location = New System.Drawing.Point(61, 174)
-        Me.tbBuild.Name = "tbBuild"
-        Me.tbBuild.ReadOnly = True
-        Me.tbBuild.Size = New System.Drawing.Size(184, 20)
-        Me.tbBuild.TabIndex = 15
-        '
-        'lblBuild
-        '
-        Me.lblBuild.AutoSize = True
-        Me.lblBuild.Location = New System.Drawing.Point(6, 177)
-        Me.lblBuild.Name = "lblBuild"
-        Me.lblBuild.Size = New System.Drawing.Size(30, 13)
-        Me.lblBuild.TabIndex = 14
-        Me.lblBuild.Text = "Build"
-        '
-        'CpuGraph
-        '
-        Me.CpuGraph.BackColor = System.Drawing.Color.Black
-        Me.CpuGraph.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.CpuGraph.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.CpuGraph.Font = New System.Drawing.Font("Tahoma", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.World)
-        Me.CpuGraph.Location = New System.Drawing.Point(3, 3)
-        Me.CpuGraph.Name = "CpuGraph"
-        Me.CpuGraph.retryCount = 0
-        Me.CpuGraph.Size = New System.Drawing.Size(171, 45)
-        Me.CpuGraph.TabIndex = 73
-        Me.CpuGraph.title = "CPU"
-        '
-        'DiskIOGraph
-        '
-        Me.DiskIOGraph.BackColor = System.Drawing.Color.Black
-        Me.DiskIOGraph.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.DiskIOGraph.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.DiskIOGraph.Font = New System.Drawing.Font("Tahoma", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.World)
-        Me.DiskIOGraph.Location = New System.Drawing.Point(534, 3)
-        Me.DiskIOGraph.Name = "DiskIOGraph"
-        Me.DiskIOGraph.retryCount = 0
-        Me.DiskIOGraph.Size = New System.Drawing.Size(171, 45)
-        Me.DiskIOGraph.TabIndex = 76
-        Me.DiskIOGraph.title = "DiskIO"
-        '
-        'FreeMemoryGraph
-        '
-        Me.FreeMemoryGraph.BackColor = System.Drawing.Color.Black
-        Me.FreeMemoryGraph.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.FreeMemoryGraph.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.FreeMemoryGraph.Font = New System.Drawing.Font("Tahoma", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.World)
-        Me.FreeMemoryGraph.Location = New System.Drawing.Point(180, 3)
-        Me.FreeMemoryGraph.Name = "FreeMemoryGraph"
-        Me.FreeMemoryGraph.retryCount = 0
-        Me.FreeMemoryGraph.Size = New System.Drawing.Size(171, 45)
-        Me.FreeMemoryGraph.TabIndex = 74
-        Me.FreeMemoryGraph.title = "Ram"
-        '
-        'NetworkIOgraph
-        '
-        Me.NetworkIOgraph.BackColor = System.Drawing.Color.Black
-        Me.NetworkIOgraph.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.NetworkIOgraph.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.NetworkIOgraph.Font = New System.Drawing.Font("Tahoma", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.World)
-        Me.NetworkIOgraph.Location = New System.Drawing.Point(357, 3)
-        Me.NetworkIOgraph.Name = "NetworkIOgraph"
-        Me.NetworkIOgraph.retryCount = 0
-        Me.NetworkIOgraph.Size = New System.Drawing.Size(171, 45)
-        Me.NetworkIOgraph.TabIndex = 75
-        Me.NetworkIOgraph.title = "NetIO"
-        '
-        'LvPrograms
-        '
-        Me.LvPrograms.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader3, Me.ColumnHeader4, Me.ColumnHeader16, Me.ColumnHeader18, Me.ColumnHeader19})
-        Me.LvPrograms.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.LvPrograms.FullRowSelect = True
-        Me.LvPrograms.Location = New System.Drawing.Point(0, 0)
-        Me.LvPrograms.Name = "LvPrograms"
-        Me.LvPrograms.Size = New System.Drawing.Size(987, 327)
-        Me.LvPrograms.TabIndex = 62
-        Me.LvPrograms.UseCompatibleStateImageBehavior = False
-        Me.LvPrograms.View = System.Windows.Forms.View.Details
-        '
-        'ColumnHeader3
-        '
-        Me.ColumnHeader3.Text = "Program"
-        Me.ColumnHeader3.Width = 360
-        '
-        'ColumnHeader4
-        '
-        Me.ColumnHeader4.Text = "Version"
-        Me.ColumnHeader4.Width = 80
-        '
-        'ColumnHeader16
-        '
-        Me.ColumnHeader16.Text = "Publisher"
-        Me.ColumnHeader16.Width = 220
-        '
-        'ColumnHeader18
-        '
-        Me.ColumnHeader18.Text = "Date Install."
-        Me.ColumnHeader18.Width = 96
-        '
-        'ColumnHeader19
-        '
-        Me.ColumnHeader19.Text = "Uninstall String"
-        Me.ColumnHeader19.Width = 280
-        '
-        'LvProcess
-        '
-        Me.LvProcess.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader7, Me.ColumnHeader1, Me.ColumnHeader2, Me.ColumnHeader5, Me.ColumnHeader6, Me.ColumnHeader13, Me.ColumnHeader14, Me.ColumnHeader15, Me.ColumnHeader25, Me.ColumnHeader26, Me.ColumnHeader27})
-        Me.LvProcess.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.LvProcess.FullRowSelect = True
-        Me.LvProcess.Location = New System.Drawing.Point(3, 3)
-        Me.LvProcess.Name = "LvProcess"
-        Me.LvProcess.Size = New System.Drawing.Size(1045, 367)
-        Me.LvProcess.TabIndex = 3
-        Me.LvProcess.UseCompatibleStateImageBehavior = False
-        Me.LvProcess.View = System.Windows.Forms.View.Details
-        '
-        'ColumnHeader7
-        '
-        Me.ColumnHeader7.Text = "Name"
-        Me.ColumnHeader7.Width = 148
-        '
-        'ColumnHeader1
-        '
-        Me.ColumnHeader1.Text = "PID"
-        '
-        'ColumnHeader2
-        '
-        Me.ColumnHeader2.Text = "TotalCpu"
-        Me.ColumnHeader2.Width = 75
-        '
-        'ColumnHeader5
-        '
-        Me.ColumnHeader5.Text = "Threads"
-        '
-        'ColumnHeader6
-        '
-        Me.ColumnHeader6.Text = "Page Faults"
-        Me.ColumnHeader6.Width = 74
-        '
-        'ColumnHeader13
-        '
-        Me.ColumnHeader13.Text = "Path"
-        Me.ColumnHeader13.Width = 183
-        '
-        'ColumnHeader14
-        '
-        Me.ColumnHeader14.Text = "Username"
-        Me.ColumnHeader14.Width = 147
-        '
-        'ColumnHeader15
-        '
-        Me.ColumnHeader15.Text = "Cpu"
-        '
-        'ColumnHeader25
-        '
-        Me.ColumnHeader25.Text = "Util. Memoire (Ko)"
-        Me.ColumnHeader25.Width = 122
-        '
-        'ColumnHeader26
-        '
-        Me.ColumnHeader26.Text = "Priorite"
-        '
-        'ColumnHeader27
-        '
-        Me.ColumnHeader27.Text = "Parent Process"
-        '
-        'LvServices
-        '
-        Me.LvServices.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeaderNom, Me.ColumnHeaderDescription, Me.ColumnHeaderStatus, Me.ColumnHeaderDemarrage, Me.ColumnHeaderCompte, Me.ColumnHeaderPath, Me.ColumnHeaderServiceType, Me.ColumnHeaderProcessPID})
-        Me.LvServices.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.LvServices.FullRowSelect = True
-        Me.LvServices.Location = New System.Drawing.Point(3, 3)
-        Me.LvServices.MultiSelect = False
-        Me.LvServices.Name = "LvServices"
-        Me.LvServices.Size = New System.Drawing.Size(1045, 367)
-        Me.LvServices.TabIndex = 0
-        Me.LvServices.UseCompatibleStateImageBehavior = False
-        Me.LvServices.View = System.Windows.Forms.View.Details
-        '
-        'ColumnHeaderNom
-        '
-        Me.ColumnHeaderNom.Text = "Nom"
-        Me.ColumnHeaderNom.Width = 255
-        '
-        'ColumnHeaderDescription
-        '
-        Me.ColumnHeaderDescription.Text = "Description"
-        Me.ColumnHeaderDescription.Width = 262
-        '
-        'ColumnHeaderStatus
-        '
-        Me.ColumnHeaderStatus.Text = "Status"
-        '
-        'ColumnHeaderDemarrage
-        '
-        Me.ColumnHeaderDemarrage.Text = "Demarrage"
-        Me.ColumnHeaderDemarrage.Width = 75
-        '
-        'ColumnHeaderCompte
-        '
-        Me.ColumnHeaderCompte.Text = "Compte"
-        Me.ColumnHeaderCompte.Width = 138
-        '
-        'ColumnHeaderPath
-        '
-        Me.ColumnHeaderPath.Text = "Path"
-        '
-        'ColumnHeaderServiceType
-        '
-        Me.ColumnHeaderServiceType.Text = "Type"
-        '
-        'ColumnHeaderProcessPID
-        '
-        Me.ColumnHeaderProcessPID.Text = "ProcessPID"
-        Me.ColumnHeaderProcessPID.Width = 73
-        '
-        'PanelSearchcommentaires
-        '
-        Me.PanelSearchcommentaires.BackColor = System.Drawing.Color.Lavender
-        Me.PanelSearchcommentaires.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.PanelSearchcommentaires.Controls.Add(Me.btLastComments)
-        Me.PanelSearchcommentaires.Controls.Add(Me.cbAssocierStation)
-        Me.PanelSearchcommentaires.Controls.Add(Me.PanelSearchCommentaire)
-        Me.PanelSearchcommentaires.Dock = System.Windows.Forms.DockStyle.Top
-        Me.PanelSearchcommentaires.Location = New System.Drawing.Point(3, 3)
-        Me.PanelSearchcommentaires.Name = "PanelSearchcommentaires"
-        Me.PanelSearchcommentaires.Size = New System.Drawing.Size(1045, 31)
-        Me.PanelSearchcommentaires.TabIndex = 0
-        '
-        'btLastComments
-        '
-        Me.btLastComments.Anchor = System.Windows.Forms.AnchorStyles.Right
-        Me.btLastComments.BackgroundImage = Global.My.Resources.Resources.unread
-        Me.btLastComments.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.btLastComments.Location = New System.Drawing.Point(665, 2)
-        Me.btLastComments.Name = "btLastComments"
-        Me.btLastComments.Size = New System.Drawing.Size(42, 23)
-        Me.btLastComments.TabIndex = 20
-        Me.btLastComments.UseVisualStyleBackColor = True
-        '
-        'cbAssocierStation
-        '
-        Me.cbAssocierStation.AutoSize = True
-        Me.cbAssocierStation.BackColor = System.Drawing.Color.Transparent
-        Me.cbAssocierStation.Location = New System.Drawing.Point(4, 4)
-        Me.cbAssocierStation.Name = "cbAssocierStation"
-        Me.cbAssocierStation.Size = New System.Drawing.Size(102, 17)
-        Me.cbAssocierStation.TabIndex = 19
-        Me.cbAssocierStation.Text = "Associer Station"
-        Me.cbAssocierStation.UseVisualStyleBackColor = False
-        '
-        'PanelSearchCommentaire
-        '
-        Me.PanelSearchCommentaire.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.PanelSearchCommentaire.BackColor = System.Drawing.Color.Transparent
-        Me.PanelSearchCommentaire.Controls.Add(Me.pbLoupe)
-        Me.PanelSearchCommentaire.Controls.Add(Me.lbNbResultsCount)
-        Me.PanelSearchCommentaire.Controls.Add(Me.tbSearchCommentaire)
-        Me.PanelSearchCommentaire.Location = New System.Drawing.Point(713, 1)
-        Me.PanelSearchCommentaire.Name = "PanelSearchCommentaire"
-        Me.PanelSearchCommentaire.Size = New System.Drawing.Size(326, 27)
-        Me.PanelSearchCommentaire.TabIndex = 17
-        '
-        'pbLoupe
-        '
-        Me.pbLoupe.Image = Global.My.Resources.Resources.magnifier
-        Me.pbLoupe.Location = New System.Drawing.Point(3, 3)
-        Me.pbLoupe.Name = "pbLoupe"
-        Me.pbLoupe.Size = New System.Drawing.Size(31, 21)
-        Me.pbLoupe.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.pbLoupe.TabIndex = 14
-        Me.pbLoupe.TabStop = False
-        '
-        'lbNbResultsCount
-        '
-        Me.lbNbResultsCount.AutoSize = True
-        Me.lbNbResultsCount.Location = New System.Drawing.Point(177, 8)
-        Me.lbNbResultsCount.Name = "lbNbResultsCount"
-        Me.lbNbResultsCount.Size = New System.Drawing.Size(0, 13)
-        Me.lbNbResultsCount.TabIndex = 15
-        '
-        'tbSearchCommentaire
-        '
-        Me.tbSearchCommentaire.Location = New System.Drawing.Point(40, 3)
-        Me.tbSearchCommentaire.Name = "tbSearchCommentaire"
-        Me.tbSearchCommentaire.Size = New System.Drawing.Size(281, 20)
-        Me.tbSearchCommentaire.TabIndex = 13
-        '
-        'LvInfoDisk
-        '
-        Me.LvInfoDisk.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.columnHeader8, Me.ColumnHeader9, Me.ColumnHeader10, Me.ColumnHeader11, Me.ColumnHeader20, Me.ColumnHeader12})
-        Me.LvInfoDisk.ContextMenuStrip = Me.ContextMenuStripDisk
-        Me.LvInfoDisk.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.LvInfoDisk.FullRowSelect = True
-        Me.LvInfoDisk.Location = New System.Drawing.Point(3, 16)
-        Me.LvInfoDisk.MultiSelect = False
-        Me.LvInfoDisk.Name = "LvInfoDisk"
-        Me.LvInfoDisk.Size = New System.Drawing.Size(295, 104)
-        Me.LvInfoDisk.TabIndex = 61
-        Me.LvInfoDisk.UseCompatibleStateImageBehavior = False
-        Me.LvInfoDisk.View = System.Windows.Forms.View.Details
-        '
-        'columnHeader8
-        '
-        Me.columnHeader8.Text = "Type"
-        '
-        'ColumnHeader9
-        '
-        Me.ColumnHeader9.Text = "Unité"
-        '
-        'ColumnHeader10
-        '
-        Me.ColumnHeader10.Text = "Capacité"
-        '
-        'ColumnHeader11
-        '
-        Me.ColumnHeader11.Text = "Libre"
-        '
-        'ColumnHeader20
-        '
-        Me.ColumnHeader20.Text = "% Libre"
-        '
-        'ColumnHeader12
-        '
-        Me.ColumnHeader12.Text = "Dirty"
-        '
         'frmMain
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -3460,6 +3461,11 @@ Partial Class frmMain
         Me.SplitContainerCommentaires.Panel2.ResumeLayout(False)
         CType(Me.SplitContainerCommentaires, System.ComponentModel.ISupportInitialize).EndInit()
         Me.SplitContainerCommentaires.ResumeLayout(False)
+        Me.PanelSearchcommentaires.ResumeLayout(False)
+        Me.PanelSearchcommentaires.PerformLayout()
+        Me.PanelSearchCommentaire.ResumeLayout(False)
+        Me.PanelSearchCommentaire.PerformLayout()
+        CType(Me.pbLoupe, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBoxResults.ResumeLayout(False)
         Me.GroupBoxResults.PerformLayout()
         Me.panelLaunchButtons.ResumeLayout(False)
@@ -3480,11 +3486,6 @@ Partial Class frmMain
         Me.CollapsiblePanelActiveDirectory.PerformLayout()
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
-        Me.PanelSearchcommentaires.ResumeLayout(False)
-        Me.PanelSearchcommentaires.PerformLayout()
-        Me.PanelSearchCommentaire.ResumeLayout(False)
-        Me.PanelSearchCommentaire.PerformLayout()
-        CType(Me.pbLoupe, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
