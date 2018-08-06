@@ -1611,7 +1611,9 @@ Public Class frmMain
 
 #Region " gestion des menus"
 
-    Private Sub OrganiserToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
+    Private Sub OrganiserToolStripMenuItem_Click(ByVal sender As System.Object,
+                                                 ByVal e As System.EventArgs)
+
         Dim frmOpened As Boolean = False
         For Each frm As Form In System.Windows.Forms.Application.OpenForms
             If frm.Name = "frmOrganiserFavoris" Then
@@ -1625,10 +1627,11 @@ Public Class frmMain
             Dim frmOrganiserFavoris = New frmOrganiserFavoris
             frmOrganiserFavoris.Show()
         End If
+
     End Sub
 
     Private Sub AfficherPanneauLatéralToolStripMenuItem_Click(ByVal sender As Object,
-                                                              ByVal e As System.EventArgs)
+                                                              ByVal e As System.EventArgs) Handles ToolStripMenuItemPanneauLateral.Click
 
         Dim tsmi As ToolStripMenuItem = CType(sender, ToolStripMenuItem)
         tsmi.Checked = Not tsmi.Checked
@@ -1637,7 +1640,7 @@ Public Class frmMain
     End Sub
 
     Private Sub AfficherLogsToolStripMenuItem_Click(ByVal sender As Object,
-                                                    ByVal e As System.EventArgs)
+                                                    ByVal e As System.EventArgs) Handles ToolStripMenuItemLogs.Click
 
         Dim tsmi As ToolStripMenuItem = CType(sender, ToolStripMenuItem)
         tsmi.Checked = Not tsmi.Checked
@@ -1647,18 +1650,19 @@ Public Class frmMain
 
     End Sub
 
-    Private Sub QuitterToolStripMenuItem1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
+    Private Sub QuitterToolStripMenuItem1_Click(ByVal sender As System.Object,
+                                                ByVal e As System.EventArgs) Handles QuitterToolStripMenuItem1.Click
         Application.Exit()
     End Sub
 
     Private Sub InfosUtilisateurToolStripMenuItem_Click(ByVal sender As System.Object,
-                                                        ByVal e As System.EventArgs)
+                                                        ByVal e As System.EventArgs) Handles InfosUtilisateurToolStripMenuItem1.Click
 
         showfrmLDAPUSER()
     End Sub
 
     Private Sub InfosHDDToolStripMenuItem_click(ByVal sender As System.Object,
-                                                ByVal e As System.EventArgs)
+                                                ByVal e As System.EventArgs) Handles InfosHDDToolStripMenuItem.Click
 
         If _station Is Nothing Then Return
 
@@ -1689,7 +1693,9 @@ Public Class frmMain
     ''' </summary>
     ''' <param name="sender"></param>
     ''' <param name="e"></param>
-    Private Sub OuvrirConsoleCtrlkToolStripMenuItem_Click(sender As Object, e As EventArgs)
+    Private Sub OuvrirConsoleCtrlkToolStripMenuItem_Click(sender As Object,
+                                                          e As EventArgs) Handles OuvrirConsoleCtrlkToolStripMenuItem.Click
+
         Dim prc As New System.Diagnostics.Process
 
         With prc
@@ -1700,40 +1706,49 @@ Public Class frmMain
         End With
     End Sub
 #Region "Psexec"
-    Private Sub DefragToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
+    Private Sub DefragToolStripMenuItem_Click(ByVal sender As System.Object,
+                                              ByVal e As System.EventArgs) Handles DefragToolStripMenuItem.Click
         psExec.defrag(_station.stationName)
     End Sub
 
-    Private Sub DefragAnalyseToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
+    Private Sub DefragAnalyseToolStripMenuItem_Click(ByVal sender As System.Object,
+                                                     ByVal e As System.EventArgs) Handles DefragAnalyseToolStripMenuItem.Click
         psExec.defrag(_station.stationName, True)
     End Sub
 
-    Private Sub RedémarrerToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
+    Private Sub RedémarrerToolStripMenuItem_Click(ByVal sender As System.Object,
+                                                  ByVal e As System.EventArgs) Handles RedémarrerToolStripMenuItem.Click
         psExec.shutdownOrReboot(_station.stationName, True)
     End Sub
 
-    Private Sub RedémarrerForcerToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
+    Private Sub RedémarrerForcerToolStripMenuItem_Click(ByVal sender As System.Object,
+                                                        ByVal e As System.EventArgs) Handles RedémarrerForcerToolStripMenuItem.Click
         psExec.shutdownOrReboot(_station.stationName, True, True)
     End Sub
 
-    Private Sub ArreterToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
+    Private Sub ArreterToolStripMenuItem_Click(ByVal sender As System.Object,
+                                               ByVal e As System.EventArgs) Handles ArreterToolStripMenuItem.Click
         psExec.shutdownOrReboot(_station.stationName)
     End Sub
 
-    Private Sub ArrêterForcerToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
+    Private Sub ArrêterForcerToolStripMenuItem_Click(ByVal sender As System.Object,
+                                                     ByVal e As System.EventArgs) Handles ArreterForcerToolStripMenuItem.Click
         psExec.shutdownOrReboot(_station.stationName, False, True)
     End Sub
 
-    Private Sub ChkdskF_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
+    Private Sub ChkdskF_Click(ByVal sender As System.Object,
+                              ByVal e As System.EventArgs) Handles ChkdskFToolStripMenuItem.Click
         psExec.chkdsk(_station.stationName)
     End Sub
 
-    Private Sub ChkdskFR_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
+    Private Sub ChkdskFR_Click(ByVal sender As System.Object,
+                               ByVal e As System.EventArgs) Handles ChkdskFRToolStripMenuItem.Click
         psExec.chkdsk(_station.stationName, True)
     End Sub
 
 
-    Private Sub ConsoleToolStripMenuItem_Click(sender As Object, e As EventArgs)
+    Private Sub ConsoleToolStripMenuItem_Click(sender As Object,
+                                               e As EventArgs) Handles ConsoleToolStripMenuItem.Click
         If _station Is Nothing OrElse _station.stationName = String.Empty Then
             Exit Sub
         End If
@@ -1741,7 +1756,8 @@ Public Class frmMain
         psExec.openRemotConsole(_station.stationName)
     End Sub
 
-    Private Sub VNCQueryConnectToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
+    Private Sub VNCQueryConnectToolStripMenuItem_Click(ByVal sender As System.Object,
+                                                       ByVal e As System.EventArgs) Handles VNCQueryConnectToolStripMenuItem.Click
         Dim stationName As String = station.stationName
 
         Try
@@ -1751,7 +1767,8 @@ Public Class frmMain
         End Try
     End Sub
 
-    Private Sub VNCNotificationToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
+    Private Sub VNCNotificationToolStripMenuItem_Click(ByVal sender As System.Object,
+                                                       ByVal e As System.EventArgs) Handles VNCNotificationToolStripMenuItem.Click
         Dim errMessage As String = ""
         Dim stationName As String = station.stationName
         Dim ok As Boolean = cregistry.SetVNCNotification(stationName, errMessage)
@@ -1761,7 +1778,8 @@ Public Class frmMain
         End If
     End Sub
 
-    Private Sub SCCMValidationToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
+    Private Sub SCCMValidationToolStripMenuItem_Click(ByVal sender As System.Object,
+                                                      ByVal e As System.EventArgs) Handles SCCMValidationToolStripMenuItem.Click
         Try
             cregistry.SetSCCMViewerQueryConnect(station.stationName)
         Catch ex As Exception
