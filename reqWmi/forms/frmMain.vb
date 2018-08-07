@@ -1786,6 +1786,11 @@ Public Class frmMain
             MsgBox(String.Format("Une erreur s'est produite !" & System.Environment.NewLine & "Message : {0}", ex.Message.ToString), MsgBoxStyle.Exclamation)
         End Try
     End Sub
+
+    Private Sub RsopToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles RsopToolStripMenuItem.Click
+        Dim frmrsop As New frmRsop(_station.stationName, _station.gInfoStation.userName)
+        frmrsop.Show()
+    End Sub
 #End Region
 
 #End Region
@@ -1880,18 +1885,14 @@ Public Class frmMain
         End If
     End Function
 
-    Private Sub RsopToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
-        Dim frmrsop As New frmRsop(_station.stationName, _station.gInfoStation.userName)
-        frmrsop.Show()
-    End Sub
-
     ''' <summary>
     ''' Gestion de la touche entrée en fonction du controle qui a le focus
     ''' </summary>
     ''' <param name="sender"></param>
     ''' <param name="e"></param>
     ''' <remarks></remarks>
-    Private Sub analog_keyPressed(ByVal sender As Object, ByVal e As KeyEventArgs)
+    Private Sub analog_keyPressed(ByVal sender As Object,
+                                  ByVal e As KeyEventArgs) Handles Me.KeyDown
 
         Select Case e.KeyCode
             Case Keys.Return
@@ -1917,7 +1918,9 @@ Public Class frmMain
     ''' </summary>
     ''' <remarks>
     ''' </remarks>
-    Private Sub frmMain_FormClosing(ByVal sender As System.Object, ByVal e As System.Windows.Forms.FormClosingEventArgs) Handles MyBase.FormClosing
+    Private Sub frmMain_FormClosing(ByVal sender As System.Object,
+                                    ByVal e As System.Windows.Forms.FormClosingEventArgs) Handles MyBase.FormClosing
+
         If e.CloseReason = CloseReason.MdiFormClosing Then
             e.Cancel = True
             Return
@@ -2041,7 +2044,9 @@ Public Class frmMain
     End Sub
 
 #Region "ContextMenuDisk"
-    Private Sub OuvrirToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles LvInfoDisk.DoubleClick
+    Private Sub OuvrirToolStripMenuItem_Click(ByVal sender As System.Object,
+                                              ByVal e As System.EventArgs) Handles LvInfoDisk.DoubleClick
+
         Dim diskpart As String = String.Empty
         Dim disktype As String = String.Empty
 
@@ -2050,7 +2055,9 @@ Public Class frmMain
         End If
     End Sub
 
-    Private Sub smartToolStripMenuItem_click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles SMARTToolStripMenuItem.Click
+    Private Sub smartToolStripMenuItem_click(ByVal sender As System.Object,
+                                             ByVal e As System.EventArgs) Handles SMARTToolStripMenuItem.Click
+
         If Not LvInfoDisk.SelectedItems.Count = 0 Then
 
             Dim driveId As String = LvInfoDisk.SelectedItems(0).SubItems(1).Text
@@ -2121,7 +2128,9 @@ Public Class frmMain
         _cCommentDisplay.displayComment(cMysqlcommentaires.searchCommentairesFor(searchExpr))
     End Sub
 
-    Private Sub btLastComments_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btLastComments.Click
+    Private Sub btLastComments_Click(ByVal sender As System.Object,
+                                     ByVal e As System.EventArgs) Handles btLastComments.Click
+
         _cCommentDisplay.dispose()
 
         _cCommentDisplay.displayComment(cMysqlcommentaires.getLastComments)
