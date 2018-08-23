@@ -1478,7 +1478,7 @@ Public Class frmMain
     End Sub
 
     Private Sub displayPrevNext(ByVal sender As Object,
-                                ByVal e As System.EventArgs)
+                                ByVal e As System.EventArgs) Handles btDisplayNext.Click, btDisplayPrev.Click
 
         Dim bt As Button = CType(sender, Button)
 
