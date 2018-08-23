@@ -1814,7 +1814,7 @@ Public Class frmMain
     ''' <param name="e"></param>
     ''' <remarks></remarks>
     Private Sub ckbFilterPrograms(ByVal sender As Object,
-                                  ByVal e As System.EventArgs)
+                                  ByVal e As System.EventArgs) Handles ckbHighlistProgDiff.Click
 
         Dim ckb As CheckBox = CType(sender, CheckBox)
 
