@@ -3,7 +3,7 @@
     Public frmServer As frmServer
     Public WithEvents log As clog
     Public programVersion As Version = My.Application.Info.Version ' version
-    Public releaseName As String = "BETA"
+    Public releaseName As String = "RC"
     Public WINDBG_PATH As String = "\Debugging Tools for Windows (x86)\windbg.exe" ' chemin pour le debugger Windows
     Public tabicons As structTabIcons
 
